@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New post</title>
+    <link rel="stylesheet" href="../dist/css/index.css" />
+  </head>
+  <body class="bg-dark">
+    <header>
+      <nav class="navbar navbar-expand-lg bg-primary sticky-top py-3 px-3">
+        <div class="container-fluid justify-content-lg-around">
+            <a class="navbar-brand" href="/feed/">
+              <img src="/content/logopolorise.jpg"  class="rounded-2" alt="Bootstrap" width="40" height="40">
+            </a>
+            <a class="navbar-brand norican-regular fs-1" href="/feed/">Polarise</a>
+     
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0 justify-content-center align-items-center">
+              <li class="nav-item">
+                <a class="nav-link text-white text-capitalize fs-2 fw-semibold"  href="/feed/"
+                  >home</i
+                ></a>
+              </li>
+           
+              <li class="nav-item">
+                <a
+                  class="nav-link text-white text-capitalize fs-2 fw-semibold active"
+                  aria-current="page"
+                  href="/post/"
+                  >new post</i
+                ></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white text-capitalize fs-2 fw-semibold" href="/profile/"
+                  >profile</a>
+              </li>
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-secondary" type="submit">Search</button>
+              </form>
+              </li>
+            </ul>
+          </div>
+        </div>    
+      </nav>
+    </header>
+    <main class="container">
+      <section
+        class="row custom-height d-flex align-items-center justify-content-center"
+      >
+        <div
+          class="card bg-primary mx-auto border border-1 rounded col-10 col-md-6 col-l-4"
+        >
+          <div
+            class="card-body custom-card-height px-1 py-5 m-0 d-flex flex-column justify-content-between"
+          >
+            <div class="card-title d-flex justify-content-between">
+              <div class="d-flex flex-column pe-5">
+                <h5>@fluffy87</h5>
+                <div class="input-group">
+                  <span class="input-group-text">#Hashtag</span>
+                  <textarea
+                    class="form-control"
+                    aria-label="Hashtag"
+                    placeholder="Write your hashtags her"
+                  ></textarea>
+                </div>
+              </div>
+
+              <img
+                src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                class="rounded border border-2 col-2 img-fluid"
+                alt="profile picture"
+              />
+            </div>
+
+            <div class="input-group mb-3">
+              <input type="file" class="form-control" id="inputGroupFile02" />
+              <label class="input-group-text" for="inputGroupFile02"
+                ><i class="bi bi-plus-circle-fill"></i
+              ></label>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile page</title>
+  <link rel="stylesheet" href="../dist/css/index.css" />
+</head>
+
+<body class="bg-dark">
+  <header>
+    <nav class="navbar navbar-expand-lg bg-primary sticky-top py-3 px-3">
+      <div class="container-fluid justify-content-lg-around">
+          <a class="navbar-brand" href="/feed/">
+            <img src="/content/logopolorise.jpg"  class="rounded-2" alt="Bootstrap" width="40" height="40">
+          </a>
+          <a class="navbar-brand norican-regular fs-1" href="/feed/">Polarise</a>
+   
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <ul class="navbar-nav mb-2 mb-lg-0 justify-content-center align-items-center">
+            <li class="nav-item">
+              <a class="nav-link text-white text-capitalize fs-2 fw-semibold" href="/feed/"
+                >home</i
+              ></a>
+            </li>
+         
+            <li class="nav-item">
+              <a
+                class="nav-link text-white text-capitalize fs-2 fw-semibold"
+                href="/post/"
+                >new post</i
+              ></a>
+            </li>
+            <li class="nav-item">
+              <a 
+              class="nav-link text-white text-capitalize fs-2 fw-semibold active" 
+              aria-current="page"
+              href="/profile/"
+                >profile</a>
+            </li>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-secondary" type="submit">Search</button>
+            </form>
+            </li>
+          </ul>
+        </div>
+      </div>    
+    </nav>
+  </header>
+  <main>
+    <section class="d-flex justify-content-between p-3">
+      <h1 class="text-capitalize norican-regular">polarise</h1>
+      <div>
+        <button type="button" class="btn btn-yellow rounded-circle text-light">
+          <i class="bi bi-bell-fill position-relative d-inline-block fs-3">
+            <span class="position-absolute top-0 start-100 translate-middle p-1 bg-light rounded-circle">
+              <span class="visually-hidden">unread notification</span>
+            </span>
+          </i>
+        </button>
+        <button type="button" class="btn btn-yellow rounded-circle text-light">
+          <i class="bi bi-chat-heart-fill position-relative d-inline-block fs-3">
+            <span class="position-absolute top-0 start-100 translate-middle p-1 bg-light rounded-circle">
+              <span class="visually-hidden">unread messages</span>
+            </span>
+          </i>
+        </button>
+      </div>
+    </section>
+    <section class="container my-5">
+      <div class="row">
+      <div class="card mx-auto border border-3 rounded position-relative col-10 col-md-10 col-lg-8 col-xl-6">
+        <img class="position-absolute top-0 start-50 translate-middle rounded border border-2 col-2 img-fluid col-4 col-md-3"
+          src="/content/AI-profile.jpg" alt="profile picture">
+        <div class="card-body py-0">
+          <div class="d-flex flex-row justify-content-between">
+            <div>
+              <p class="fw-bold fs-2 raleway-bold">203K</p>
+              <p class="text-capitalize justify-content-start">followers</p>
+            </div>
+            <div>
+              <p class="fw-bold fs-2 raleway-bold">1.3K</p>
+              <p class="text-capitalize">following</p>
+            </div>
+          </div>
+          <h5 class="card-title text-center raleway-bold">@Fluffy87</h5>
+          <p class="text-center fs-5">My name is Jon Are and I like to teleport to space!</p>
+          <div class="d-flex flex-row justify-content-around">
+            <button type="button" class="btn btn-dark rounded-4 py-2 px-4">follow</button>
+            <button type="button" class="btn btn-outline-dark rounded-4 py-2 px-4">message</button>
+          </div>
+          <div class="d-flex justify-content-around p-3">
+            <button type="button" class="btn btn-outline-dark text-capitalize border-0">all</button>
+            <button type="button" class="btn  border-bottom text-capitalize link-underline">photos</button>
+            <button type="button" class="btn btn-outline-dark text-capitalize border-0">videos</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container">
+      <div class="row">
+      <div class="card border border-3 rounded bg-light mx-auto col-10 col-md-10">
+        <div class="card-body">
+          <div class="row g-2">
+            <div class="col-md-8">
+              <img src="https://source.unsplash.com/random/800x600?italy,summer" class="img-fluid rounded"
+                alt="Italia Sommer">
+            </div>
+            <div class="col-md-4 d-flex flex-column justify-content-between">
+              <img src="https://source.unsplash.com/random/800x600?toscana,summer" class="img-fluid rounded mb-2"
+                alt="Italia Sommer">
+              <img src="https://source.unsplash.com/random/800x600?rome,summer" class="img-fluid rounded"
+                alt="Italia Sommer">
+            </div>
+          </div>
+
+          <div class="row g-2 my-2">
+            <div class="col-md-4">
+              <img src="https://source.unsplash.com/random/800x600?florence,summer" class="img-fluid rounded"
+                alt="Italia Sommer">
+            </div>
+            <div class="col-md-4">
+              <img src="https://source.unsplash.com/random/800x600?venice,summer" class="img-fluid rounded"
+                alt="Italia Sommer">
+            </div>
+            <div class="col-md-4">
+              <img src="https://source.unsplash.com/random/800x600?milan,summer" class="img-fluid rounded"
+                alt="Italia Sommer">
+            </div>
+          </div>
+
+          <div class="row g-2">
+            <div class="col-md-4 d-flex flex-column justify-content-between">
+              <img src="https://source.unsplash.com/random/800x600?sicily,summer" class="img-fluid rounded mb-2"
+                alt="Italia Sommer">
+              <img src="https://source.unsplash.com/random/800x600?naples,summer" class="img-fluid rounded"
+                alt="Italia Sommer">
+            </div>
+            <div class="col-md-8">
+              <img src="https://source.unsplash.com/random/800x600?tuscany,summer" class="img-fluid rounded"
+                alt="Italia Sommer">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+
+
+
+  </main>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

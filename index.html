@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="../dist/css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <script
+      defer
+      src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+    ></script>
+  </head>
+  <body class="bg-dark">
+    <main class="container">
+      <section class="row d-flex vh-100">
+        <div
+          class="bg-primary rounded-3 col-11 m-auto d-flex flex-column flex-md-row justify-content-around align-items-center py-3 py-md-5"
+        >
+          <div
+            class="position-relative text-center text-lg-start col-10 col-md-6 py-md-4"
+          >
+            <div
+              class="brand_logo_container top-0 start-50 translate-middle rounded-5 mb-4"
+            >
+              <img
+                src="/content/logopolorise.jpg"
+                class="brand_logo"
+                alt="Logo"
+              />
+            </div>
+            <div class="pt-5 mt-5 text-break">
+              <p class="lead">
+                Welcome to Polarise! Enjoy your connections and trip down memory
+                lane. Take pictures and share with friends and family, only the
+                pictures is in polaroid form
+                <span class="fw-bold">- just like the 80s!</span>
+              </p>
+              <div>
+                Don't have an account? <a href="#">Sign Up</a><br />
+                <a href="#">Forgot your password?</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-10 col-md-6">
+            <form class="was-validated" action="/profile/" method="GET">
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="username"
+                  placeholder="username"
+                  minlength="2"
+                  required
+                />
+                <div class="invalid-feedback text-secondary">
+                  Please enter your username.
+                </div>
+              </div>
+              <div class="mb-3">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  placeholder="password"
+                  minlength="12"
+                  pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{12,}$"
+                  required
+                />
+                <div class="invalid-feedback text-secondary">
+                  Password must include at least 12 letters & numbers.
+                </div>
+              </div>
+              <div class="form-check mb-3">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="rememberMe"
+                />
+                <label class="form-check-label text-secondary" for="rememberMe"
+                  >Remember me</label
+                >
+              </div>
+              <div class="d-grid">
+                <button class="btn btn-dark btn-lg" type="submit">Login</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
