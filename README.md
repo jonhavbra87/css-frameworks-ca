@@ -1,6 +1,6 @@
 # css-frameworks-ca
 
-![image](https://portfolio.kongsvinger-it.no/img/background3.jpg)
+![image](https://icons.getbootstrap.com/assets/img/icons-hero.png)
 
 ## Description
 
