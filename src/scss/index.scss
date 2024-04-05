@@ -1,40 +1,42 @@
 // scss-docs-start color-variables
-$blue: purple;
-$indigo: #9055ee;
-$purple: #9b76f8;
-$pink: #f259a5;
-$red: #f4495a;
-$orange: #fa9a4c;
-$yellow: #FFD369; // #FFE6A4;
-$green: #5cfeb2;
-$teal: #5eefc4;
+$blue: #FFD369; //Primary
 $gray-600: #393E46; //secondary color
-$cyan: #393E46; //#AD8211;
 $gray-300: #000; //border color
 $gray-900: #222831; //Dark color
 
 .bg-primary {
-    background: linear-gradient(-225deg, $yellow, $cyan);
+    background: linear-gradient(-225deg, $blue, $gray-600);
     background-attachment: fixed;
     background-size: cover;
 }
 
 .bg-navbar {
-    background: linear-gradient(90deg, $yellow, $cyan);
+    background: linear-gradient(90deg, $blue, $gray-600);
 }
 
+.gradient-border {
+    display: inline-block; 
+    border-radius: 50%; 
+    padding: 2px; 
+    background: linear-gradient(-225deg, $blue, $gray-600); 
+}
+.gradient-border img {
+    display: block; 
+    width: 100%;
+    border-radius: 50%; 
+}
+  
 .custom-border-bottom {
     border-bottom: 3px solid !important;
 }
 
-.feed-background {
-    background-color: #BF7791;
+.custom-height {
+    height: calc(100vh - 80px); 
 }
 
-.full-width {
-    width: 100%;
+.custom-card-height {
+    height: calc(50vh); 
 }
-
 
 main {
     padding-bottom: 80px;
@@ -47,16 +49,7 @@ main {
     font-style: normal;
 }
 
-// <uniquifier>: Use a unique and descriptive class name
-// <weight>: Use a value from 100 to 900
 
-/* .raleway-bold {
-    font-family: "Raleway", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 800;
-    font-style: normal;
-}
- */
 h1,
 h2,
 h3,
@@ -66,9 +59,7 @@ h6 {
     font-family: "Raleway", sans-serif;
 }
 
-// <uniquifier>: Use a unique and descriptive class name
-// <weight>: Use a value from 300 to 700
-
+a,
 p {
     font-family: "Yrsa", serif;
     font-optical-sizing: auto;
@@ -77,18 +68,6 @@ p {
 }
 
 //https://bootsnipp.com/snippets/3522X
-.user_card {
-    margin-top: auto;
-    margin-bottom: auto;
-    background: linear-gradient(-225deg, $yellow, $cyan);;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 10px;
-    border-radius: 5px;
-
-}
 .brand_logo_container {
     position: absolute;
     height: 170px;
@@ -99,6 +78,7 @@ p {
     padding: 10px;
     text-align: center;
 }
+
 .brand_logo {
     height: 150px;
     width: 150px;
@@ -115,40 +95,17 @@ p {
     border: 0 !important;
     border-radius: 0.25rem 0 0 0.25rem !important;
 }
+
 .input_user,
 .input_pass:focus {
     box-shadow: none !important;
     outline: 0px !important;
 }
+
 .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
     background-color: #393E46 !important;
 }
 
-
-/* Tilpasset farge for godkjent (valid) tilstand med #6997FF */
-html .form-control.is-valid:focus, 
-html .was-validated .form-control:valid:focus {
-  border-color: #6997FF !important; /* Medium blå */
-  box-shadow: 0 0 0 0.2rem rgba(105, 151, 255, 0.5) !important; /* Lysere blå skygge for fokus */
-}
-
-html .was-validated .form-control:valid,
-html .form-control.is-valid {
-  border-color: #6997FF !important; /* Medium blå for gyldig input-grense */
-}
-
-
-/* Tilpasset farge for ikke godkjent (invalid) tilstand */
-html .form-control.is-invalid:focus, 
-html .was-validated .form-control:invalid:focus {
-  border-color: #E53935 !important; /* Klar rød */
-  box-shadow: 0 0 0 0.2rem rgba(229, 57, 53, 0.25) !important;
-}
-
-html .was-validated .form-control:invalid,
-html .form-control.is-invalid {
-  border-color: #E53935 !important;
-}
 
 
 
@@ -157,3 +114,49 @@ html .form-control.is-invalid {
 @import url('https://fonts.googleapis.com/css2?family=Norican&family=Raleway:ital,wght@0,100..900;1,100..900&family=Yrsa:ital,wght@0,300..700;1,300..700&display=swap');
 @import "../../node_modules/bootstrap-icons/font/bootstrap-icons.css";
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+
+
+//Tried to change the color of the input fields when they are valid or invalid
+
+// html .form-control.is-valid:focus, 
+// html .was-validated .form-control:valid:focus {
+//   border-color: #6997FF !important; 
+//   box-shadow: 0 0 0 0.2rem rgba(105, 151, 255, 0.5) !important; 
+// }
+
+// html .was-validated .form-control:valid,
+// html .form-control.is-valid {
+//   border-color: #6997FF !important; 
+// }
+
+
+
+// html .form-control.is-invalid:focus, 
+// html .was-validated .form-control:invalid:focus {
+//   border-color: #E53935 !important; 
+//   box-shadow: 0 0 0 0.2rem rgba(229, 57, 53, 0.25) !important;
+// }
+
+// html .was-validated .form-control:invalid,
+// html .form-control.is-invalid {
+//   border-color: #E53935 !important;
+// }
+// .background-img {
+//     color: #6997FF;
+//     display: none; 
+//   }
+  
+//   .icon-invalid {
+//     color: #E53935 ;
+//     display: none; 
+//   }
+  
+//   .is-valid + .icon-valid {
+//     display: inline; 
+//   }
+  
+//   .is-invalid + .icon-invalid {
+//     display: inline; 
+//   }
+  
