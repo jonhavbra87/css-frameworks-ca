@@ -1,6 +1,6 @@
 # JS2
 
-![image]([https://openclipart.org/download/272343/1486640684.svg])
+![image](https://openclipart.org/download/272343/1486640684.svg)
 
 ## Description
 
