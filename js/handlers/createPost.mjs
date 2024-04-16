@@ -11,10 +11,10 @@ export function setCreatePostListener() {
 
             if (post.tags) {
                const tagsArray = post.tags = post.tags
-                  .split(",")
-                  .map((tag) => tag.trim())
-                  .filter((tag) => tag !== "");
-        
+                  .split(",") //splits the string into an array
+                  .map((tag) => tag.trim()) //remove whitespace
+                  .filter((tag) => tag !== "") //remove empty strings
+                  .map(tag => `#${tag}`); //add # to each tag
                 post.tags = tagsArray.length > 0 ? tagsArray : [];
               } else {
                 post.tags = [];
