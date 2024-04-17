@@ -1,7 +1,5 @@
 import * as templates from "./templates/index.mjs"
-import * as postMethods from "./api/posts/index.mjs"
 import * as listeners from "./handlers/index.mjs"
-
 
 
 export default function router() {
@@ -27,31 +25,12 @@ export default function router() {
             listeners.setLoginFormListenter();
             break;
         case "/posts/":
-            testTemplate();
+            templates.renderPosts();
+            break;
+        case "/post/":
+            templates.renderPost();
             break;
         default:
             console.log("I'm not going to do anything because I'm not on the login or register page");
     }
 }
-
-//Rendering the post(s)
-async function testTemplate() {
-    console.log("I'm on the posts page");
-    const posts = await postMethods.getPosts();
-
-    const container = document.querySelector("#post");
-    templates.renderPostTemplates(posts, container);
-    console.log(posts);
-}
-
-/* createPost( {
-    title: "examplasdf",
-    body: "heuhjeg"
-}) */
-
-//post.removePost(11685)
-
-//post.getPosts().then(console.log);
-//post.getPost(1168).then(console.log);
-
-
