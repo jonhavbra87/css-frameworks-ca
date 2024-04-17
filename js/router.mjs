@@ -1,28 +1,31 @@
-import * as templates from "./templates/index.mjs"
-import * as listeners from "./handlers/index.mjs"
+import * as templates from "./templates/index.mjs";
+import * as listeners from "./handlers/index.mjs";
 
 
 export default function router() {
     const path = location.pathname;
 
     switch (path) {
+        case "/profile/":
+            templates.renderProfile();
+            break;
         case "/profile/login/":
-            listeners.setLoginFormListenter();
+            listeners.setLoginFormListener();
             break;
         case "/profile/register/":
-            listeners.setRegisterFormListenter();
+            listeners.setRegisterFormListener();
             break;
         case "/profile/edit/":
-            listeners.setUpdateProfileListenter();
+            listeners.setUpdateProfileListener();
             break;
         case "/post/create/":
             listeners.setCreatePostListener();
             break;
         case "/post/edit/":
-            listeners.setUpdatePostListenter();
+            listeners.setUpdatePostListener();
             break;
         case "/":
-            listeners.setLoginFormListenter();
+            console.log("Welcome to Polarise!");
             break;
         case "/posts/":
             templates.renderPosts();
