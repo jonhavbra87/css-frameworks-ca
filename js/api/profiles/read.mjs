@@ -20,7 +20,15 @@ export async function getProfile(name) {
 
     const getProfileURL = `${API_SOCIAL_URL}${action}/${name}`;
 
-    const response = await authFetch(getProfileURL)
-
-    return await response.json();
+    try {
+        const response = await authFetch(getProfileURL);
+        if (response.ok) {
+            return await response.json();
+        } else {
+            throw new Error(`Failed to fetch profile: ${response.status} ${response.statusText}`);
+        }
+    } catch (error) {
+        console.error('Error fetching profile:', error);
+        throw error;  // Rethrow the error to handle it further up the call stack if necessary
+    }
 }
