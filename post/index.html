@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>New post</title>
+    <title>Post Specific</title>
     <link rel="stylesheet" href="../dist/css/index.css" />
+    <script type="module" src="../js/index.mjs"></script>
     <script
     defer
     src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
@@ -61,11 +62,16 @@
         </div>    
       </nav>
     </header>
-    <main class="container">
-      <section
-        class="row"
-      >
-        <form class="was-validated d-flex custom-height" action="/feed/" method="GET">
+    <main class="flex-grow-1 bg-dark text-light">
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="row col-12" id="post">
+<!-------- Showing one specific post ---------->
+            </div>
+        </div>
+    </div>
+      <!-------A form for new posts (from design)-->
+     <!--    <form class="was-validated d-flex custom-height" action="/feed/" method="GET">
           <div
             class="card bg-primary m-auto border border-1 rounded col-10 col-lg-6 py-2 py-lg-4" >
             <div class="card-body custom-card-height px-1 py-5 m-0 d-flex flex-column justify-content-between" >
@@ -101,8 +107,7 @@
                 </div>
             </div>
           </div>
-        </form>
-      </section>
+        </form> -->
     </main>
   </body>
 </html>
