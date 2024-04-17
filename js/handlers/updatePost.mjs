@@ -6,7 +6,7 @@ import { updatePost } from "../api/posts/update.mjs";
 //This is done by getting the post data from the API and then setting the value of the form fields to the data from the API.
 
 
-export async function setUpdatePostListenter() {
+export async function setUpdatePostListener() {
     const form = document.querySelector("#updatePost");
 
     const url = new URL(location.href);

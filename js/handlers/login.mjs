@@ -1,6 +1,6 @@
 import { login } from "../api/auth/login.mjs"
 
-export function setLoginFormListenter() {
+export function setLoginFormListener() {
     const form = document.querySelector("#loginForm");
 
     if (form) {
