@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Profile page</title>
   <link rel="stylesheet" href="../dist/css/index.css" />
+  <script type="module" src="../js/index.mjs"></script>
   <script
   defer
   src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
@@ -85,34 +86,8 @@
         </button>
       </div>
     </section>
-    <section class="container my-5">
-      <div class="row">
-      <div class="card mx-auto border border-3 rounded position-relative col-10 col-md-10 col-lg-8 col-xl-6">
-        <img class="position-absolute top-0 start-50 translate-middle rounded border border-2 col-2 img-fluid col-4 col-md-3"
-          src="/content/AI-profile.jpg" alt="profile picture">
-        <div class="card-body py-0">
-          <div class="d-flex flex-row justify-content-between">
-            <div>
-              <p class="fw-bold fs-2 raleway-bold">203K</p>
-              <p class="text-capitalize justify-content-start">followers</p>
-            </div>
-            <div>
-              <p class="fw-bold fs-2 raleway-bold">1.3K</p>
-              <p class="text-capitalize">following</p>
-            </div>
-          </div>
-          <h5 class="card-title text-center raleway-bold">@Fluffy87</h5>
-          <p class="text-center fs-5">My name is Jon Are and I like to teleport to space!</p>
-          <div class="d-flex flex-row justify-content-around">
-            <button type="button" class="btn btn-dark rounded-4 py-2 px-4">follow</button>
-            <button type="button" class="btn btn-outline-dark rounded-4 py-2 px-4">message</button>
-          </div>
-          <div class="d-flex justify-content-around p-3">
-            <button type="button" class="btn btn-outline-dark text-capitalize border-0">all</button>
-            <button type="button" class="btn  border-bottom text-capitalize link-underline">photos</button>
-            <button type="button" class="btn btn-outline-dark text-capitalize border-0">videos</button>
-          </div>
-        </div>
+    <section class="container">
+      <div class="row" id="profileContainer">
       </div>
     </section>
     <section class="container">
@@ -167,8 +142,6 @@
 
 
   </main>
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>
