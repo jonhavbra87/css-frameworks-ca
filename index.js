@@ -1,8 +1,11 @@
-export const API_BASE = "https://v2.api.noroff.dev";
+//--------------- This index file is from the v2 API This should be implemented at the end ---------------//
+
+
+/* export const API_BASE = "https://v2.api.noroff.dev";
 export const API_AUTH = "/auth/"; //`${API_BASE}/auth`
 export const API_REGISTER = "/register"; //`${API_AUTH}/register`
 export const API_LOGIN = "/login";
-export const API_KEY_URL ="create-api-key";
+export const API_KEY_URL ="create-api-key"; */
 
 /** 
  * saves a value to local storage
@@ -10,18 +13,18 @@ export const API_KEY_URL ="create-api-key";
  * @param {any} value - the value to save
 **/
 
-export function save (key, value) {
+/* export function save (key, value) {
     localStorage.setItem(key, JSON.stringify(value));
-}
+} */
 
 /**
  *  returns a value from local storage
  * @param {string} key - the key to get the value for
 **/
 
-export function load (key) {
+/* export function load (key) {
     return JSON.parse(localStorage.getItem(key));
-}
+} */
 
 /**
  * fetches all the posts from the API
@@ -40,16 +43,16 @@ export function load (key) {
  * ```
  */
 
-export async function getPosts() {
+/* export async function getPosts() {
     const response = await fetch(API_BASE + "social/posts", { //`${API_BASE}/posts`
         headers: {
             Authorization: `Bearer ${load("token")}`
         }
     });
     return await response.json();
-}
+} */
 
-export async function getAPIKey() {
+/* export async function getAPIKey() {
     const response = await fetch(API_BASE + API_AUTH + API_KEY_URL, {
      method: "POST",
      headers: { "Content-Type": "application/json", 
@@ -66,9 +69,9 @@ export async function getAPIKey() {
 
     console.error(await response.json());
     throw new Error("Could not register for an API key!");
-}
+} */
 
-export async function registrer(name, email, password) {
+/* export async function registrer(name, email, password) {
     const response = await fetch(API_BASE + API_AUTH + API_REGISTER, {
         headers: {
             "Content-Type": "application/json"
@@ -82,9 +85,9 @@ export async function registrer(name, email, password) {
     }
 
     throw new Error("Could not register the account");
-}
+} */
 
-export async function login(email, password) {
+/* export async function login(email, password) {
     const response = await fetch(API_BASE + API_AUTH + API_LOGIN, {
         headers: {
             "Content-Type": "application/json"
@@ -101,9 +104,9 @@ export async function login(email, password) {
     }
 
     throw new Error("Could not login the account");
-}
+} */
 
-export async function onAuth(event) {
+/* export async function onAuth(event) {
     event.preventDefault();
     const name = event.target.name.value;
     const email = event.target.email.value;
@@ -118,12 +121,12 @@ export async function onAuth(event) {
 
     const posts = await getPosts();
     console.log(posts);
-}
+} */
 
-export function setAuthListener() {
+/* export function setAuthListener() {
     document.forms.auth.addEventListener(".submit", onAuth); //Oliver Dipple Noroff API video
     //document.getElementById("authForm").addEventListener("submit", onAuth); //ChatGPT suggested this
-}
+} */
 
 //setAuthListener();
 //getAPIKey();
