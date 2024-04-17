@@ -1,5 +1,5 @@
 import { getPosts } from "../api/posts/read.mjs";
-import { renderPostTemplates } from "./posts.mjs";
+import { renderAllPostsTemplates } from "./posts.mjs";
 
 
 export async function renderPosts() {
@@ -7,6 +7,6 @@ export async function renderPosts() {
     const posts = await getPosts();
 
     const container = document.querySelector("#posts");
-    renderPostTemplates(posts, container);
+    renderAllPostsTemplates(posts, container);
     console.log(posts);
 }
