@@ -24,6 +24,9 @@ export default function router() {
         case "/post/edit/":
             listeners.setUpdatePostListener();
             break;
+        case "/post/delete/":
+            listeners.setDeletePostListener();
+            break;
         case "/":
             console.log("Welcome to Polarise!");
             break;
