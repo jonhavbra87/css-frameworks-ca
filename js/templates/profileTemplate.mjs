@@ -7,7 +7,7 @@ export function profileTemplate(profile) {
 
     const img = document.createElement('img');
     img.classList.add('position-absolute', 'top-0', 'start-50', 'translate-middle', 'rounded', 'border', 'border-2', 'col-2', 'img-fluid', 'col-4', 'col-md-3');
-    img.src = `${API_SOCIAL_URL}/profiles/${profile.avatar}`;
+    img.src = profile.avatar;
     img.alt = 'profile picture';
 
     // Opprette card body
