@@ -6,15 +6,18 @@ const method = "delete";
 
 export async function removePost(id) {
     if (!id) {
-        throw new Error(`Delete required a postID ${response.text}`);
+        throw new Error(`Delete required a postID`);
       }
-    
-    const updatePostURL = `${API_SOCIAL_URL}${action}/${id}`
+    try {
+    const deletePostURL = `${API_SOCIAL_URL}${action}/${id}`
 
-    const response = await authFetch(updatePostURL, {
+    const response = await authFetch(deletePostURL, {
         method
   });
+  return await response.json();
+  } catch (error) {
+    console.error('Error:', error);
+    throw error;
+  }
 
-
-return await response.json();
 }
