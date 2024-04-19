@@ -32,6 +32,7 @@ export default function router() {
             break;
         case "/posts/":
             templates.renderPosts();
+            templates.renderAllProfilesTemplates(); 
             break;
         case "/post/":
             templates.renderPost();

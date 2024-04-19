@@ -9,8 +9,8 @@ export async function getProfiles() {
 
     const response = await authFetch(updateProfileURL)
     return await response.json();
-}
 
+}
 
 export async function getProfile(name) {
     console.log(name);

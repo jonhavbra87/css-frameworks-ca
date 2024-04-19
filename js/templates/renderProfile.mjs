@@ -13,8 +13,8 @@ export async function renderProfile() {
     try {
         const profile = await getProfile(name);
         const container = document.querySelector("#profileContainer");
-        const profileCard = profileTemplate(profile, container);  // Generate the card
-        container.innerHTML = '';  // Clear existing content
+        const profileCard = profileTemplate(profile, container);  
+        container.innerHTML = '';
         container.append(profileCard);  
         console.log(profile);
     } catch (error) {
