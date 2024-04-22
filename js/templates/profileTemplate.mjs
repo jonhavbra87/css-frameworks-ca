@@ -35,7 +35,7 @@ export function profileTemplate(profileData) {
 
     const followersDiv = document.createElement('div');
     const followersCount = document.createElement('p');
-    followersCount.classList.add('fw-bold', 'fs-2', 'raleway-bold');
+    followersCount.classList.add('fw-bold', 'fs-2', 'fw-bold');
     followersCount.textContent = "203K";
     const followersText = document.createElement('p');
     followersText.classList.add('text-capitalize', 'justify-content-start');
@@ -45,7 +45,7 @@ export function profileTemplate(profileData) {
 
     const followingDiv = document.createElement('div');
     const followingCount = document.createElement('p');
-    followingCount.classList.add('fw-bold', 'fs-2', 'raleway-bold');
+    followingCount.classList.add('fw-bold', 'fs-2', 'fw-bold');
     followingCount.textContent = "1.3K";
     const followingText = document.createElement('p');
     followingText.classList.add('text-capitalize');
@@ -61,7 +61,7 @@ export function profileTemplate(profileData) {
 
     const description = document.createElement('p');
     description.classList.add('text-center', 'fs-5');
-    description.textContent = "My name is Jon Are and I like to teleport to space!";
+    description.textContent = `My name is ${profileData.name} and I like to teleport to space!`;
 
     const buttonContainer = document.createElement('div');
     buttonContainer.classList.add('d-flex', 'flex-row', 'justify-content-around');
@@ -101,9 +101,5 @@ export function profileTemplate(profileData) {
     cardBody.append(flexContainer, title, description, buttonContainer, navContainer);
     profileContainer.append(bannerImg, img, cardBody);
 
-    // link.append(img);
-    // profileContainer.append(link);
-    // profileContainer.append(img);
-    
     return profileContainer;
 }
