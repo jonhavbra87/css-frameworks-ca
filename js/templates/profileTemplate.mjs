@@ -6,19 +6,20 @@ export function profileTemplate(profileData) {
     const profileContainer = document.createElement("div");
     profileContainer.className = "position-relative bg-dark bg-opacity-50 rounded-circle gradient-border";
 
-    // const link = document.createElement("a");
-    // link.href = `?name=${profileData.name}`; 
-    // link.className = "d-block";
+    const link = document.createElement("a");
+    link.href = `/?name=${profileData.name}`; 
+    link.className = "d-block";
+
 
     const img = document.createElement("img");
     img.className = "rounded-circle object-fit-cover";
-    img.style.width = "4rem";
-    img.style.height = "4rem";
+    img.style.width = "100px";
+    img.style.height = "100px";
     img.src = profileData.avatar;
     img.alt = `Profile of ${profileData.name}`;
 
-    // link.append(img);
-    // profileContainer.append(link);
+    link.append(img);
+    
     profileContainer.append(img);
     
     return profileContainer;
