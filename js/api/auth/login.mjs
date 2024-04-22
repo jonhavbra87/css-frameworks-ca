@@ -16,16 +16,14 @@ export async function login(profile) {
     },
     method,
     body
-})
+});
+    if (response.ok) {
+        const { accessToken, ...user } = await response.json();
+        storage.save("accessToken", accessToken);
+        storage.save("profile", user);
+        alert("You have been logged in successfully");
+    } else {
+        throw new Error("Failed to log in: " + response.statusText);
+    }
 
-const { accessToken, ...user } = await response.json();
-
-storage.save("accessToken", accessToken);
-
-storage.save("profile", user);
-
-alert("You have been logged in successfully");
-
-// This line will execute if response.ok is false
-//throw new Error(response.statusText);
 }

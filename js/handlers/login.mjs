@@ -15,7 +15,7 @@ export function setLoginFormListener() {
 
             try {
                 await login(profile);
-                window.location.href = "/profile/";
+                window.location.href = `/profile/?name=${profile.name}`;
             }
             catch (error) {
                 console.error("Login failed:", error);
@@ -23,3 +23,4 @@ export function setLoginFormListener() {
         })
     }
 }
+
