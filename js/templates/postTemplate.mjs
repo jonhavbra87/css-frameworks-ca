@@ -11,29 +11,55 @@ export function postTemplate(postData) {
     const cardBody = document.createElement("div");
     cardBody.classList.add("card-body", "px-1", "m-0");
 
-    const cardTitle = document.createElement("div");
-    cardTitle.classList.add("card-title", "d-flex", "flex-column", "align-items-start", "py-1");
-    const userInfo = document.createElement("div");
-    userInfo.classList.add("d-flex", "flex-column");
-    
-    const userName = document.createElement("h4");
-    userName.classList.add("fw-bold", "col-12");
-    userName.textContent = postData.title;
+    const headerInfo = document.createElement("div");
+    headerInfo.classList.add("d-flex", "justify-content-between", "align-items-center")
+    // Div for title and tags
+    const cardTitleAndTags = document.createElement("div");
+    cardTitleAndTags.classList.add("d-flex", "flex-column", "align-items-start", "py-1");
 
-
-    const userTags = document.createElement("p");
-    userTags.classList.add("text-wrap", "fw-light", "col-12");
+    const cardTitle = document.createElement("h4");
+    cardTitle.classList.add("fw-bold", "mb-1");
+    cardTitle.textContent = postData.title; // Assuming postData.title is available
     
-    // Add # in fornt of each tag
+    const cardTags = document.createElement("p");
+    cardTags.classList.add("text-wrap", "fw-light");
     if (postData.tags && postData.tags.length) {
         const formattedTags = postData.tags.map(tag => `#${tag}`).join(" ");
-        userTags.textContent = formattedTags;
+        cardTags.textContent = formattedTags;
     } else {
-        userTags.textContent = "#Image"; // Håndter tilfelle der det ikke finnes tags
+        cardTags.textContent = "#Image"; // Default tag in case there are no tags
+    }
+    
+    cardTitleAndTags.append(cardTitle, cardTags);
+
+    // Div for username and image
+    const userInfo = document.createElement("div");
+    userInfo.classList.add("d-flex", "flex-column", "justify-content-between", "align-items-center", "mt-2");
+
+    const userNameElement = document.createElement("h6");
+    userNameElement.classList.add("fw-bold");
+    userNameElement.textContent = postData.author.name; // Assuming postData.userName is available
+    userNameElement.textContent = postData.author && postData.author.name ? postData.author.name : "Unknown Author";
+
+    const userImage = document.createElement("img");
+    userImage.classList.add("rounded-circle");
+     // Set a default image if author or avatar is missing
+    if (postData.author && postData.author.avatar) {
+        // If postData.author and postData.author.avatar exist and are truthy
+        userImage.src = postData.author.avatar;
+    } else {
+        // If either postData.author is falsy or postData.author.avatar is falsy
+        userImage.src = "https://upload.wikimedia.org/wikipedia/commons/9/9d/Unknown_Member.jpg?20170805162126";
     }
 
-    userInfo.append(userName, userTags);
-    cardTitle.append(userInfo);
+    //  userImage.src = postData.author && postData.author.avatar ? postData.author.avatar : "https://upload.wikimedia.org/wikipedia/commons/9/9d/Unknown_Member.jpg?20170805162126";
+    userImage.alt = `Profile of ${postData.author ? postData.author.name : "Unknown"}`;
+    userImage.style.width = "40px"; // Set image width
+    userImage.style.height = "40px"; // Set image height
+
+    userInfo.append(userImage, userNameElement);
+
+    headerInfo.append(cardTitleAndTags, userInfo);
     
     // Image: a div with bootstraps 4:3 ratio class, a wrapper inside that is absolute positioned, and an image inside imgContainer.
     const imgContainer = document.createElement("div");
@@ -66,6 +92,7 @@ export function postTemplate(postData) {
 
     cardBody.append(imgContainer);
 
-    card.append(cardBody, cardTitle, imgContainer);
+    card.append(cardBody, headerInfo, imgContainer);
+
     return card;
 }
