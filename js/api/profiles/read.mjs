@@ -6,10 +6,22 @@ const action = "/profiles";
 
 export async function getProfiles() {
     const updateProfileURL = `${API_SOCIAL_URL}${action}`;
-
-    const response = await authFetch(updateProfileURL)
-    return await response.json();
-
+    console.log("Making API request to:", updateProfileURL);
+    try {
+        const response = await authFetch(updateProfileURL);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        if (!Array.isArray(data)) {
+            console.error('Data received is not an array:', data);
+            return [];  // Return an empty array if data is not in expected format
+        }
+        return data;
+    } catch (error) {
+        console.error("Error fetching profiles:", error);
+        return [];  // Return an empty array to handle errors gracefully
+    }
 }
 
 export async function getProfile(name) {
