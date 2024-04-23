@@ -3,6 +3,7 @@ import { API_SOCIAL_URL } from "../constants.mjs";
 
 const action = "/posts"
 const author = "/?_author=true"
+const tag = "?_tag=my_tag";
 
 
 export async function getPosts() {
