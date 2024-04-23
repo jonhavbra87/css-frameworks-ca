@@ -1,6 +1,4 @@
-import { reactToPost } from "../ui/reactToPost.mjs";
-
-
+import { reactToPost } from "../api/posts/reactToPost.mjs";
 
 export async function reactionListener(event) {
     if (!event) {

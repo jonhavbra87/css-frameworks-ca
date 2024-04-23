@@ -1,9 +1,11 @@
 import * as templates from "./templates/index.mjs";
-import * as listeners from "./handlers/index.mjs";
+import * as listeners from "./listeners/index.mjs";
 import * as ui from "./ui/index.mjs";
 
 
 export default function router() {
+
+    
     const path = location.pathname;
 
     switch (path) {
@@ -36,9 +38,8 @@ export default function router() {
             templates.setupSearchForm();
             break;
         case "/post/":
-            templates.renderPost().then(() => {
-                listeners.reactionListener();
-            });
+            templates.renderPost();
+            listeners.reactBtnListener();
             break;
         default:
             console.log("I'm not going to do anything because I'm not on the login or register page");

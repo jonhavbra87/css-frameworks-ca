@@ -1,5 +1,6 @@
 import { removePost } from "../api/posts/delete.mjs";
-import { reactToPost } from "../ui/reactToPost.mjs";
+import { reactionListener } from "../listeners/reaction.mjs";
+import { reactToPost } from "../api/posts/reactToPost.mjs";
 import { postTemplate } from "./postTemplate.mjs";
 
 export function renderSpecificPostTemplates(postData, parent) {
@@ -39,15 +40,7 @@ export function renderSpecificPostTemplates(postData, parent) {
         button.className = "btn btn-light btn-sm";
         button.dataset.postId = postData.id;
         button.dataset.symbol = symbol;
-        button.onclick = async (event) => { // Legg til parameter event her
-        const button = event.target; // Bruk event.target for å få tak i knappen som ble klikket på
-        const postId = button.dataset.postId; // Hent postId fra knappens datasett
-        const symbol = button.dataset.symbol; // Hent symbol fra knappens datasett
-
-        const reactionData = await reactToPost(postId, symbol);
-
-        console.log(reactionData);
-        };
+        button.addEventListener('click', reactionListener); // Attaching event listener directly
         reactionContainer.append(button);
     });
     
