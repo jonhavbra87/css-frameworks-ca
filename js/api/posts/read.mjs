@@ -3,7 +3,7 @@ import { API_SOCIAL_URL } from "../constants.mjs";
 
 const action = "/posts"
 const author = "/?_author=true"
-const tag = "?_tag=my_tag";
+const tag = "?_tag=my_tag"
 
 
 export async function getPosts() {
@@ -22,6 +22,7 @@ export async function getPost(id) {
     const getPostURL = `${API_SOCIAL_URL}${action}/${id}${author}`;
 
     const response = await authFetch(getPostURL)
+    console.log(response);
 
     return await response.json();
 }
