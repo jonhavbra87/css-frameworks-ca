@@ -1,4 +1,5 @@
 import { removePost } from "../api/posts/delete.mjs";
+import { reactToPost } from "../ui/reactToPost.mjs";
 import { postTemplate } from "./postTemplate.mjs";
 
 export function renderSpecificPostTemplates(postData, parent) {
@@ -26,8 +27,32 @@ export function renderSpecificPostTemplates(postData, parent) {
         }  
     }
 
+    const reactionContainer = document.createElement("div");
+    reactionContainer.className = "reaction-container d-flex justify-content-around mt-2";
 
-    buttonContainer.append(editButton, deleteButton);
+    // List of emojis to be used as reactions
+    const reactions = ["👍", "❤️", "😂", "🎉", "😢", "🤔"];
+
+    reactions.forEach(symbol => {
+        const button = document.createElement("button");
+        button.textContent = symbol;
+        button.className = "btn btn-light btn-sm";
+        button.dataset.postId = postData.id;
+        button.dataset.symbol = symbol;
+        button.onclick = async (event) => { // Legg til parameter event her
+        const button = event.target; // Bruk event.target for å få tak i knappen som ble klikket på
+        const postId = button.dataset.postId; // Hent postId fra knappens datasett
+        const symbol = button.dataset.symbol; // Hent symbol fra knappens datasett
+
+        const reactionData = await reactToPost(postId, symbol);
+
+        console.log(reactionData);
+        };
+        reactionContainer.append(button);
+    });
+    
+
+    buttonContainer.append(editButton, deleteButton, reactionContainer);
 
     card.append(buttonContainer);
 

@@ -1,4 +1,5 @@
 import { getPost } from "../api/posts/read.mjs";
+import { reactToPost } from "../ui/reactToPost.mjs";
 import { renderSpecificPostTemplates } from "./post.mjs";
 
 
@@ -15,7 +16,9 @@ export async function renderPost() {
 
     const container = document.querySelector("#post");
     renderSpecificPostTemplates(post, container);
- 
+    post.forEach(postData => {
+      reactToPost(postData.id, '👍');
+  });
 
     } catch (error) {
         //Developer console log
