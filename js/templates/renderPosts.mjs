@@ -1,6 +1,6 @@
 import { getPosts } from "../api/posts/read.mjs";
 import { filterByName } from "./filterPosts.mjs";
-import { renderAllPosts } from "./posts.mjs";
+import { appendPosts } from "./appendPosts.mjs";
 
 
 export async function renderPosts() {
@@ -10,8 +10,8 @@ export async function renderPosts() {
 
     const posts = await getPosts(); 
     try {
-        console.log(posts);
-        renderAllPosts(posts, container);
+        // console.log(posts);
+        appendPosts(posts, container);
     } catch (error) {
         console.error("Failed to fetch and render posts:", error);
     }
