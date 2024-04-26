@@ -1,20 +1,18 @@
 import { postTemplate } from "./postTemplate.mjs";
 
-export function renderAllPostsTemplates(postDataList, parent) {
+export function renderAllPosts(postDataList, parent) {
     try {
-        const elements = postDataList.map(postData  => {
+        postDataList.forEach(postData => {
             const element = postTemplate(postData);
             if (element) {
-                //Add click event on every card
+                // Add click event on every card
                 element.style.cursor = "pointer"; 
                 element.addEventListener('click', () => {
                     window.location.href = `/post/?id=${postData.id}`;
                 });
+                parent.append(element);
             }
-            return element;
         });
-        
-        parent.append(...elements);
     } catch (error) {
     console.error("Failed to render posts:", error);
     }
