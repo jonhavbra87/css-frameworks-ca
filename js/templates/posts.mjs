@@ -12,9 +12,7 @@ export function renderAllPostsTemplates(postDataList, parent) {
                 });
             }
             return element;
-        }
-        
-        ).filter(el => el !== null);
+        });
         
         parent.append(...elements);
     } catch (error) {
