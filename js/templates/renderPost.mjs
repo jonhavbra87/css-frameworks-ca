@@ -2,6 +2,7 @@ import { getPost } from "../api/posts/read.mjs";
 import { reactToPost } from "../api/posts/reactToPost.mjs";
 import { renderSpecificPostTemplates } from "./post.mjs";
 
+//fetching med loop, 500 stk, så filtrere.
 
 export async function renderPost() {
   console.log("I'm on the post page");

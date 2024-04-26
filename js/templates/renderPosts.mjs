@@ -2,6 +2,7 @@ import { getPosts } from "../api/posts/read.mjs";
 import { filterByName } from "./filterPosts.mjs";
 import { renderAllPostsTemplates } from "./posts.mjs";
 
+
 export async function renderPosts() {
     console.log("I'm on the posts page");
     const container = document.querySelector("#posts");
@@ -23,3 +24,6 @@ export async function renderPosts() {
     })
 
 }
+
+//posData.reactions.lenght
+//postDAta.reactions.lenght når lengden er mer enn 0 så skal den vises
