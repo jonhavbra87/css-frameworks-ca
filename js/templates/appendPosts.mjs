@@ -1,7 +1,10 @@
 import { postTemplate } from "./postTemplate.mjs";
 
 export function appendPosts(postDataList, parent) {
-   
+    if (!postDataList) {
+        console.error("Failed to render posts: postDataList is undefined");
+        return;
+    }
     try {
         postDataList.forEach(postData => {
             const element = postTemplate(postData);

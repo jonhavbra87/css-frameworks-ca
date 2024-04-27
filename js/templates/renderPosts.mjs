@@ -10,9 +10,14 @@ export async function renderPosts() {
     const container = document.querySelector("#posts");
     container.innerHTML = '';
 
-    const posts = await getPosts();
+  
     //console.log(posts); 
     try {
+        const posts = await getPosts();
+        if (!posts || !posts.length) {
+            console.log("No posts found or failed to load posts.");
+            return;
+        }
         appendPosts(posts, container);
         filterButton(posts);
         filterByCommentsSwitch(posts, container);
