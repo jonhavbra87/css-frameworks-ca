@@ -1,6 +1,9 @@
 import { getPosts } from "../api/posts/read.mjs";
-import { filterByName } from "./filterPosts.mjs";
+
 import { appendPosts } from "./appendPosts.mjs";
+import { filterButton } from "../listeners/filterButton.mjs";
+import { filterByComments } from "./filterByComments.mjs";
+import { filterByCommentsSwitch } from "../listeners/filterByCommentsSwitch.mjs";
 
 
 export async function renderPosts() {
@@ -8,20 +11,17 @@ export async function renderPosts() {
     const container = document.querySelector("#posts");
     container.innerHTML = '';
 
-    const posts = await getPosts(); 
+    const posts = await getPosts();
+    console.log(posts); 
     try {
         // console.log(posts);
         appendPosts(posts, container);
+        filterButton(posts);
+        filterByCommentsSwitch(posts, container);
     } catch (error) {
         console.error("Failed to fetch and render posts:", error);
     }
 
-    const filterBtn = document.getElementById("filterButton");
-    filterBtn.addEventListener("click", () => {
-        const filterQueryElement = document.getElementById("authorNameInput");
-        const filterQuery = filterQueryElement.value;
-        filterByName(posts, filterQuery);
-    })
 
 }
 

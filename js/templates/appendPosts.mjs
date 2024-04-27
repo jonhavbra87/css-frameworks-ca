@@ -1,6 +1,7 @@
 import { postTemplate } from "./postTemplate.mjs";
 
 export function appendPosts(postDataList, parent) {
+   
     try {
         postDataList.forEach(postData => {
             const element = postTemplate(postData);
