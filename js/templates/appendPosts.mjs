@@ -4,14 +4,14 @@ export function appendPosts(postDataList, parent) {
    
     try {
         postDataList.forEach(postData => {
-            const element = postTemplate(postData);
-            if (element) {
+            const cardContent = postTemplate(postData);
+            if (cardContent) {
                 // Add click event on every card
-                element.style.cursor = "pointer"; 
-                element.addEventListener('click', () => {
+                cardContent.style.cursor = "pointer"; 
+                cardContent.addEventListener('click', () => {
                 window.location.href = `/post/?id=${postData.id}`;
                 });
-                parent.append(element);
+                parent.append(cardContent);
             }
         });
     } catch (error) {

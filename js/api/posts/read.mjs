@@ -7,7 +7,16 @@ const author = "?_author=true"
 const comment = "&_comments=true"
 const reactions = "&_reactions=true"
 const tag = "?_tag=my_tag"
+const commentReply = "/comment"
 
+/**
+ * Fetches posts from a social API with detailed query parameters to include authors, comments, and reactions.
+ * The function constructs a URL using constants and parameters defined at module level and sends a fetch request
+ * using the `doFetch` utility function. If the fetch fails, it throws an error with the failed reason.
+ * 
+ * @returns {Promise<Object>} A Promise that resolves to the fetched posts data.
+ * @throws {Error} Throws an Error object with a message if the fetch operation fails.
+ */
 
 export async function getPosts() {
     // const updatePostURL = `${API_SOCIAL_URL}${action}${author}`;
