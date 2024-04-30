@@ -1,11 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Norican&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Norican&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Norican&family=Raleway:ital,wght@0,100..900;1,100..900&family=Yrsa:ital,wght@0,300..700;1,300..700&display=swap');
-
-@import "../../node_modules/bootstrap-icons/font/bootstrap-icons.css";
-
-@import "../../node_modules/bootstrap/scss/bootstrap.scss";
-
 // scss-docs-start color-variables
 $blue: #FFD369; //Primary
 $gray-600: #393E46; //secondary color
@@ -21,6 +13,10 @@ $gray-900: #222831; //Dark color
 .bg-navbar {
     background: linear-gradient(90deg, $blue, $gray-600);
 }
+
+@import "../../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
 .gradient-border {
     display: inline-block; 
@@ -128,6 +124,10 @@ p {
 
 
 
+
+@import url('https://fonts.googleapis.com/css2?family=Norican&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Norican&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Norican&family=Raleway:ital,wght@0,100..900;1,100..900&family=Yrsa:ital,wght@0,300..700;1,300..700&display=swap');
 
 
 
