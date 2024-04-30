@@ -11,6 +11,7 @@ export default function router() {
     switch (path) {
         case "/profile/":
             templates.renderProfile();
+            listeners.editProfileButton();
             break;
         case "/profile/login/":
             listeners.setLoginFormListener();

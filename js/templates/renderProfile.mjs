@@ -21,19 +21,5 @@ export async function renderProfile() {
         console.error("Failed to load profile:", error);
     }
  
-    
-    // if (!name) {
-    //     console.error("No username specified");
-    //     return;
-    // }
-    // try {
-        // const profile = await getProfile(name);
-        // const container = document.querySelector("#profileContainer");
-        // const profileCard = profileTemplate(profile, container);  
-        // container.innerHTML = '';
-        // container.append(profileCard);  
-        // console.log(profile);
-    // } catch (error) {
-    //     console.error("Failed to load profile:", error);
-    // }
+
 }

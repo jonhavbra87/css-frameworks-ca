@@ -6,3 +6,4 @@ export * from "./updateProfile.mjs";
 export * from "./deletePost.mjs";
 export * from "./reaction.mjs";
 export * from "./reactBtnListener.mjs";
+export * from "./editProfileButton.mjs";
