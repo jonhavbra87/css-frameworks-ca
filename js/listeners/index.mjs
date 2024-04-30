@@ -7,3 +7,4 @@ export * from "./deletePost.mjs";
 export * from "./reaction.mjs";
 export * from "./reactBtnListener.mjs";
 export * from "./editProfileButton.mjs";
+export * from "./viewProfile.mjs";

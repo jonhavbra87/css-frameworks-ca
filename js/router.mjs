@@ -4,7 +4,6 @@ import * as ui from "./ui/index.mjs";
 
 
 export default function router() {
-
     
     const path = location.pathname;
 
