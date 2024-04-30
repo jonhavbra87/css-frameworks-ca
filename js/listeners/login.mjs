@@ -20,7 +20,7 @@ export function setLoginFormListener() {
             if (user && user.name) {
                 window.location.href = `/profile/?name=${user.name}`;
             } else {
-                throw new Error("Brukernavn er ikke lagret i localStorage.");
+                throw new Error("Username can not be found stored in storage.");
             }
          } catch (error) {
             console.error("Login failed:", error);

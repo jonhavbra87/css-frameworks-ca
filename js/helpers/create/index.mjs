@@ -6,3 +6,7 @@ export * from "./createIconElement.mjs";
 export * from "./createMediaContainer.mjs";
 export * from "./createUserInfoContainer.mjs";
 export * from "./createImgWrapperContainer.mjs";
+export * from "./createProfileTextContent.mjs";
+export * from "./createProfileMediaContainer.mjs";
+export * from "./createProfileImgWrapper.mjs";
+export * from "./createProfileBanner.mjs";

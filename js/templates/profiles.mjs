@@ -8,7 +8,7 @@ export function renderAllProfilesTemplates(profileDataList, parent) {
         return;
     }
     try {
-        const elements = profileDataList.map(profileData => profileTemplate(profileData)).filter(el => el !== null);
+        const elements = profileDataList.forEach(profileData => profileTemplate(profileData)).filter(el => el !== null);
         console.log("Elements to append:", elements);
         parent.append(...elements);
     } catch (error) {

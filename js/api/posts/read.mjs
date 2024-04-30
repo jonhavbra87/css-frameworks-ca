@@ -27,7 +27,6 @@ export async function getPosts() {
     } catch (error) {
         throw new Error(error)
     }
-
 }
 
 

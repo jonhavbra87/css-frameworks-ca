@@ -21,8 +21,6 @@ export async function renderPosts() {
     } catch (error) {
         console.error("Failed to fetch and render posts:", error);
     }
-
-
 }
 
 //posData.reactions.lenght
