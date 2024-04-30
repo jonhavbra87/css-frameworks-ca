@@ -13,13 +13,13 @@ export function profileTemplate(profileData) {
     bannerImg.style.width = "100%"; // Cover the entire card width
     bannerImg.style.height = "200px"; // Fixed height for the banner
     bannerImg.style.objectFit = "cover"; // Ensure the image covers the area without distortion
-    bannerImg.src = "https://images.unsplash.com/photo-1455849318743-b2233052fcff?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"; // Placeholder banner image
+    bannerImg.src = profileData.banner; // Placeholder banner image
     bannerImg.alt = "Banner";
 
     const img = document.createElement("img");
     img.classList.add("rounded", "position-absolute", "top-0", "start-50", "translate-middle", "rounded-1", "object-fit-cover");
-    img.style.width = "4rem";
-    img.style.height = "4rem";
+    img.style.width = "8rem";
+    img.style.height = "8rem";
     if (profileData.avatar) {
         img.src = profileData.avatar;
     } else {

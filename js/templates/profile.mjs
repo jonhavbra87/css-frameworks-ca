@@ -1,8 +1,8 @@
-import { profileTemplate } from "./profileTemplate.mjs";
+// import { profileTemplate } from "./profileTemplate.mjs";
 
-export async function renderProfileTemplate(profile, parent) {
-    const card = profileTemplate(profile);
+// export async function renderProfileTemplate(profile, parent) {
+//     const card = profileTemplate(profile);
 
-    parent.append(card);
-}
+//     parent.append(card);
+// }
 

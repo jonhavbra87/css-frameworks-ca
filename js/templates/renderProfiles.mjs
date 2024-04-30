@@ -23,10 +23,6 @@ export async function renderProfiles() {
     try {
         const profiles = await getProfiles();
         console.log("Profiles to render:", profiles);
-        if (!Array.isArray(profiles)) {
-            console.error("Received data is not an array:", profiles);
-            return; // Exit if the data is not an array
-        }
 
         renderAllProfilesTemplates(profiles, container);
     } catch (error) {
