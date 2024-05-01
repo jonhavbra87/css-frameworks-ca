@@ -2,6 +2,7 @@ import { removePost } from "../api/posts/delete.mjs";
 import { reactionListener } from "../listeners/reaction.mjs";
 import { reactToPost } from "../api/posts/reactToPost.mjs";
 import { postTemplate } from "./postTemplate.mjs";
+import { createReaction } from "../helpers/create/createReactions.mjs";
 
 export function renderSpecificPostTemplates(postData, parent) {
     const card = postTemplate(postData);
@@ -21,31 +22,38 @@ export function renderSpecificPostTemplates(postData, parent) {
     deleteButton.classList.add("btn", "btn-danger", "mx-1");
     deleteButton.setAttribute("post-id", postData.id);
     deleteButton.onclick = async () => {
-        try {
-            await removePost(postData.id)
-        } catch (error) {
-            console.log("error delete", error);
-        }  
+        if (confirm("Are you sure you want to delete this post?")) {
+            try {
+                await removePost(postData.id);
+                alert("Post deleted successfully!");
+                location.href = "/posts/";
+            } catch (error) {
+                console.error("Error deleting post", error);
+                alert("Failed to delete the post."); 
+            }
+        }
     }
 
-    const reactionContainer = document.createElement("div");
-    reactionContainer.className = "reaction-container d-flex justify-content-around mt-2";
+    // const reactionContainer = document.createElement("div");
+    // reactionContainer.className = "reaction-container d-flex justify-content-around mt-2";
 
     // List of emojis to be used as reactions
-    const reactions = ["👍", "❤️", "😂", "🎉", "😢", "🤔"];
+    // const reactions = ["👍", "❤️", "😂", "🎉", "😢", "🤔"];
 
-    reactions.forEach(symbol => {
-        const button = document.createElement("button");
-        button.textContent = symbol;
-        button.className = "btn btn-light btn-sm";
-        button.dataset.postId = postData.id;
-        button.dataset.symbol = symbol;
-        button.addEventListener('click', reactionListener); // Attaching event listener directly
-        reactionContainer.append(button);
-    });
-    
+    // reactions.forEach(symbol => {
+    //     const button = document.createElement("button");
+    //     button.textContent = symbol;
+    //     button.className = "btn btn-light btn-sm";
+    //     button.dataset.postId = postData.id;
+    //     button.dataset.symbol = symbol;
+    //     button.addEventListener('click', reactionListener); // Attaching event listener directly
+    //     reactionContainer.append(button);
+    // });
 
-    buttonContainer.append(editButton, deleteButton, reactionContainer);
+    const reactionContainer = createReaction(postData.id);
+    card.append(reactionContainer);
+
+    buttonContainer.append(editButton, deleteButton);
 
     card.append(buttonContainer);
 

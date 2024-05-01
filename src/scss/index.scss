@@ -18,6 +18,14 @@ $gray-900: #222831; //Dark color
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
+.reaction-container {
+    position: absolute;
+    bottom: 29%;
+    left: 0;
+    justify-content: center;
+    width: 100%;
+}
+
 .gradient-border {
     display: inline-block; 
     border-radius: 50%; 
