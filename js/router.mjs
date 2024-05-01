@@ -20,6 +20,7 @@ export default function router() {
             break;
         case "/profile/edit/":
             listeners.setUpdateProfileListener();
+            listeners.backButton();
             break;
         case "/post/create/":
             listeners.setCreatePostListener();

@@ -16,6 +16,9 @@ export async function createPost(postData) {
     throw new Error(`HTTP error! status: ${response.statusText}`);
   }
 
-return await response.json();
+  const result = await response.json();
 
+  window.location.href = "/posts/";
+
+  return result;
 }
