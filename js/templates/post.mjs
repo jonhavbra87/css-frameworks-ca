@@ -50,8 +50,8 @@ export function renderSpecificPostTemplates(postData, parent) {
     //     reactionContainer.append(button);
     // });
 
-    const reactionContainer = createReaction(postData.id);
-    card.append(reactionContainer);
+//    const reactionContainer = createReaction(postData.id);
+  //  card.append(reactionContainer);
 
     buttonContainer.append(editButton, deleteButton);
 

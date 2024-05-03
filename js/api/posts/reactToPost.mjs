@@ -16,14 +16,17 @@ export async function reactToPost(postId, symbol) {
     try {
         const response = await authFetch(reactURL, {
             method: method,
-            body: JSON.stringify(reactionData)  //Send the reaction data as JSON
+            body: JSON.stringify(reactionData)
         });
 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.statusText}`);
         }
 
-        return await response.json();
+        const result = await response.json();
+        console.log(result);
+        let likeReaction = result.reactions.find(count);
+        return likeReaction ? likeReaction.count : 0; 
     } catch (error) {
         console.error("Error while reacting to post:", error);
         throw error; 

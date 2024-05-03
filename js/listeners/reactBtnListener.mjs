@@ -1,10 +1,9 @@
-import { reactionListener } from "./reaction.mjs";
+import { reactionListener } from "./reactionListener.mjs";
 
-export function reactBtnListener(params) {
-    document.addEventListener('click', function(event) {
-        // Check if the clicked element is a reaction button
-        if (event.target && event.target.matches("button[data-post-id][data-symbol]")) {
-            reactionListener(event);
-        }
-    });
+
+export function reactBtnListener(count) {
+   let likeButton = document.getElementById('likeButton')
+   console.log(likeButton);
+   likeButton.addEventListener('click', reactionListener(count));
 }
+

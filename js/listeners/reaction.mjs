@@ -6,16 +6,15 @@ export async function reactionListener(event) {
         return;
     }
     const button = event.target;
-    const symbol = button.dataset.symbol;
     const postId = button.dataset.postId;
 
     
     if (postId && symbol) {
         try {
-            await reactToPost(postId, symbol);
-   
-        } catch {
-            return alert("There was a problem reacting to this post");
+            const likesCount = await reactToPost(postId);
+            document.getElementById('likeCount').textContent = likesCount;
+        } catch (error) {
+            alert("There was a problem reacting to this post");
         }
     }
 }
