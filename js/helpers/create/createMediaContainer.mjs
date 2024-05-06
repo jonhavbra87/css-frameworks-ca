@@ -35,7 +35,7 @@ export function createMediaContainer(postData) {
         img.src = defaultMedia[randomIndex];
     }
 
-    const imgWrapper = createImgWrapperContainer();
+    const imgWrapper = createImgWrapperContainer(postData);
 
     imgContainer.append(img, imgWrapper);
 

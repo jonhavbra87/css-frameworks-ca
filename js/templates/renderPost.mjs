@@ -13,12 +13,10 @@ export async function renderPost() {
       let id = url.searchParams.get("id");
 
       const postData = await getPost(id);
-      console.log("postData:", postData);
 
       if (postData) {
           const container = document.querySelector("#post");
           renderSpecificPostTemplates(postData, container);
-          reactToPost(postData.id, '👍');
       } else {
           console.log("No post found with ID:", id);
       }

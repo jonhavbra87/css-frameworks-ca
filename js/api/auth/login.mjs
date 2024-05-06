@@ -6,7 +6,7 @@ const method = "post";
 
 export async function login(profile) {
     const loginURL = API_SOCIAL_URL + action;
-    console.log(loginURL);
+    // console.log(loginURL);
 
     const body = JSON.stringify(profile);
 
