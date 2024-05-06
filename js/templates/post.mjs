@@ -1,10 +1,9 @@
 import { removePost } from "../api/posts/delete.mjs";
-import { reactionListener } from "../listeners/reaction.mjs";
-import { reactToPost } from "../api/posts/reactToPost.mjs";
 import { postTemplate } from "./postTemplate.mjs";
-import { createReaction } from "../helpers/create/createReactions.mjs";
+
 
 export function renderSpecificPostTemplates(postData, parent) {
+    // importing post card template and the adding buttons/content to a specific post.
     const card = postTemplate(postData);
     
     const buttonContainer = document.createElement ("div")
@@ -33,25 +32,6 @@ export function renderSpecificPostTemplates(postData, parent) {
             }
         }
     }
-
-    // const reactionContainer = document.createElement("div");
-    // reactionContainer.className = "reaction-container d-flex justify-content-around mt-2";
-
-    // List of emojis to be used as reactions
-    // const reactions = ["👍", "❤️", "😂", "🎉", "😢", "🤔"];
-
-    // reactions.forEach(symbol => {
-    //     const button = document.createElement("button");
-    //     button.textContent = symbol;
-    //     button.className = "btn btn-light btn-sm";
-    //     button.dataset.postId = postData.id;
-    //     button.dataset.symbol = symbol;
-    //     button.addEventListener('click', reactionListener); // Attaching event listener directly
-    //     reactionContainer.append(button);
-    // });
-
-//    const reactionContainer = createReaction(postData.id);
-  //  card.append(reactionContainer);
 
     buttonContainer.append(editButton, deleteButton);
 

@@ -1,6 +1,6 @@
 import { createIconElement } from "./createIconElement.mjs";
 
-export function createControlBar() {
+export function createControlBar(postData) {
     const controlBar = document.createElement("div");
     controlBar.classList.add("d-flex", "flex-nowrap", "flex-row", "justify-content-between", "p-3", "position-absolute", "start-0", "end-0", "bottom-0", "container-fluid", "bg-dark", "bg-opacity-50", "rounded-bottom-1");
 
@@ -12,13 +12,13 @@ export function createControlBar() {
     const likeButton = createIconElement("bi bi-hearts px-2");
     likeButton.setAttribute("role", "button");
     likeButton.id = "likeButton";
-    likeButton.dataset.count = count; 
+    likeButton.setAttribute("post-id", postData.id);
 
-    const likeCount = document.createElement("span");
+/*     const likeCount = document.createElement("span");
     likeCount.id = "likeCount";
     likeCount.textContent = "0";
-
-    iconsLeft.append(chatIcon, likeButton, likeCount);
+ */
+    iconsLeft.append(chatIcon, likeButton);
 
     const iconsRight = document.createElement("div");
     iconsRight.className = "text-white";

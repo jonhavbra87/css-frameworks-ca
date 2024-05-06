@@ -18,7 +18,6 @@ export async function renderPost() {
       if (postData) {
           const container = document.querySelector("#post");
           renderSpecificPostTemplates(postData, container);
-          reactToPost(postData.id, '👍');
       } else {
           console.log("No post found with ID:", id);
       }
