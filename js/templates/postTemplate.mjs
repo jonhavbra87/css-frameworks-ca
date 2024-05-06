@@ -8,7 +8,7 @@ export function postTemplate(postData) {
     const headerInfo = helpers.createHeaderInfoContainer(postData);
     const userInfo = helpers.createUserInfoContainer(postData);
     const imgContainer = helpers.createMediaContainer(postData);
-       
+
     headerInfo.append(userInfo);
     cardBody.append(headerInfo, imgContainer);
     card.append(cardBody);

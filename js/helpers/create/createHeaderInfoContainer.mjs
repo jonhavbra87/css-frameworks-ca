@@ -27,7 +27,9 @@ export function createHeaderInfoContainer(postData) {
         return `#${sanitizedTag}`;
     }
 }).join(" ");
+
 cardTags.textContent = formattedTags;
+
     } else {
         cardTags.textContent = "#Image"; // Default tag in case there are no tags
     }
