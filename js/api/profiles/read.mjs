@@ -6,7 +6,6 @@ const action = "/profiles";
 
 export async function getProfiles() {
     const updateProfileURL = `${API_SOCIAL_URL}${action}`;
-    console.log("Making API request to:", updateProfileURL);
     try {
         const response = await authFetch(updateProfileURL);
         if (!response.ok) {
@@ -25,7 +24,6 @@ export async function getProfiles() {
 }
 
 export async function getProfile(name) {
-    console.log(name);
     if(!name) {
         throw new Error("Get post requires a name");
     }
