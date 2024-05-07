@@ -2,11 +2,10 @@ import { appendPosts } from "../templates/appendPosts.mjs";
 import { filterByComments } from "../templates/filterByComments.mjs";
 
 export function filterByCommentsSwitch(posts, container) {
-    const SwitchComments = document.getElementById("SwitchComments");
-    SwitchComments.addEventListener("change", () => {
-        console.log("Switch toggled:", SwitchComments.checked); 
+    const switchComments = document.getElementById("switchComments");
+    switchComments.addEventListener("change", () => {
         container.innerHTML = ''; 
-        if (SwitchComments.checked) {
+        if (switchComments.checked) {
             const filteredPosts = filterByComments(posts);  
             appendPosts(filteredPosts, container);  
         } else {

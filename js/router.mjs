@@ -1,16 +1,17 @@
 import * as templates from "./templates/index.mjs";
 import * as listeners from "./listeners/index.mjs";
-//import * as ui from "./ui/index.mjs";
+import * as utilities from "./utilities/index.mjs";
 
 
 export default function router() {
-    
+
     const path = location.pathname;
 
     switch (path) {
         case "/profile/":
             templates.renderProfile();
             listeners.editProfileButton();
+            utilities.logOut();
             break;
         case "/profile/login/":
             listeners.setLoginFormListener();
@@ -35,10 +36,14 @@ export default function router() {
             console.log("Welcome to Polarise!");
             break;
         case "/posts/":
+            utilities.logOut();
             templates.renderPosts();
             templates.setupSearchForm();
+            listeners.filterToggle();
+            listeners.searchToggle();
             break;
         case "/post/":
+            utilities.logOut();
             templates.renderPost();
             listeners.reactionButton();
             break;

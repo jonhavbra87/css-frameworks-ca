@@ -18,6 +18,72 @@ $gray-900: #222831; //Dark color
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
+// Custom CSS
+
+@keyframes growOut {
+    0% {
+        transform: scaleY(0);
+        transform-origin: top;
+        opacity: 0;
+    }
+    100% {
+        transform: scaleY(1);
+        transform-origin: top;
+        opacity: 1;
+    }
+}
+
+@keyframes shrinkIn {
+    0% {
+        transform: scaleY(1);
+        transform-origin: top;
+        opacity: 1;
+    }
+    100% {
+        transform: scaleY(0);
+        transform-origin: top;
+        opacity: 0;
+    }
+}
+
+#filterToggle, #searchToggle {
+    z-index: 2;
+}
+
+.filter-panel, .search-panel {
+    position: relative;
+    background: transparent;
+    transform: translateY(0);
+    transform-origin: top;
+    opacity: 0.8;
+    z-index: 1;
+    overflow: hidden;
+    display: none;
+}
+
+.filter-visible, .search-visible {
+    animation: shrinkIn 0.3s forwards;
+    display: block;
+}
+
+.filter-hidden, .search-hidden {
+    animation: growOut 0.3s forwards; /* Use 'forwards' to maintain the state after animation */
+
+}
+
+.btn {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
 .reaction-container {
     position: absolute;
     bottom: 29%;

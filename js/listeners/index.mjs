@@ -8,3 +8,5 @@ export * from "./editProfileButton.mjs";
 export * from "./viewProfile.mjs";
 export * from "./backButton.mjs";
 export * from "./reactionButton.mjs"
+export * from "./filterToggle.mjs";
+export * from "./searchToggle.mjs";

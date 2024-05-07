@@ -2,7 +2,6 @@ import { reactToPost } from "../api/posts/reactToPost.mjs";
 
 const token = localStorage.getItem("accessToken");
 const parsedToken = JSON.parse(token);
-console.log("parsedToken:", parsedToken);
 export async function reactionButton() {
     document.addEventListener("click", async (event) => {
         if (event.target.id === "likeButton") {

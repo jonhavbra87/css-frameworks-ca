@@ -61,6 +61,7 @@
                   <a 
                   class="nav-link text-white text-capitalize fs-2 fw-semibold" 
                   aria-current="page"
+                  id="logOut"
                   href="/"
                     >logout</a>
                 </li>
@@ -70,36 +71,112 @@
         </nav>
       </header>
     <main class="flex-grow-1 ">
-      <section class="container">
-        <div class="row">
-          <form class="d-flex" id="searchForm" role="search">
-            <input class="form-control me-2" id="searchInput" type="search" placeholder="Search by username or #tag" aria-label="Search">
-            <button class="btn btn-outline-primary" type="submit">Search</button>
-          </form>
-        </div>
-        <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" role="switch" id="SwitchComments">
-          <label class="form-check-label" for="SwitchComments">Sort by comments</label>
-        </div>
-        <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" role="switch" id="switchReactions">
-          <label class="form-check-label" for="switchReactions">Sort by reactions</label>
-        </div>
-        
-      </section>
       <section
       class="container"
       >
-      <div class="row">
-        <div>
-          <input type="text" id="authorNameInput" placeholder="Enter author name to filter by">
-<button id="filterButton">Filter Posts by Author</button>
-          </div>
+      <div class="row">      
+       
         <div id="profiles"></div>  
-          <!-- <div class="d-flex m-0 px-0 flex-wrap flex-md-nowrap justify-content-end align-items-center col-5 col-sm-4 col-md-3 col-lg-2">
+      </section>
+        <!-- <section
+        class="row"
+      >
+          <div class="gap-2 my-3 d-flex flex-nowrap overflow-hidden col-7 col-sm-8 col-md-9 col-lg-10">
+            <div class="position-relative bg-dark bg-opacity-50 rounded-circle gradient-border">
+              <img
+                class="rounded-circle object-fit-cover"
+                style="width: 4rem; height: 4rem"
+                src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="person story"
+              />
+              <span class="position-absolute bottom-0 end-0 translate-x">
+                <i class="bi bi-plus-circle-fill text-light fs-5"></i>
+                <span class="visually-hidden">unread messages</span>
+              </span>
+            </div>
+            <div class="gradient-border">
+              <img
+                class="rounded-circle object-fit-cover"
+                style="width: 4rem; height: 4rem"
+                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="person story"
+              />
+            </div>
+            <div class="gradient-border">
+              <img
+                class="rounded-circle object-fit-cover"
+                style="width: 4rem; height: 4rem"
+                src="https://images.unsplash.com/photo-1506863530036-1efeddceb993?q=80&w=1488&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="person story"
+              />
+            </div>
+            <div class="gradient-border">
+              <img
+                class="rounded-circle object-fit-cover"
+                style="width: 4rem; height: 4rem"
+                src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZSUyMHNlbGZpZSUyMDMlM0EyfGVufDB8fDB8fHww"
+                alt="person story"
+              />
+            </div>
+            <div class="gradient-border">
+              <img
+                class="rounded-circle object-fit-cover"
+                style="width: 4rem; height: 4rem"
+                src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?q=80&w=1317&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="person story"
+              />
+            </div>
+            <div class="gradient-border">
+              <img
+                class="rounded-circle object-fit-cover"
+                style="width: 4rem; height: 4rem"
+                src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?q=80&w=1317&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="person story"
+              />
+            </div>
+            <div class="gradient-border">
+              <img
+                class="rounded-circle object-fit-cover"
+                style="width: 4rem; height: 4rem"
+                src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?q=80&w=1317&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="person story"
+              />
+            </div>
+            <div class="gradient-border">
+              <img
+                class="rounded-circle object-fit-cover"
+                style="width: 4rem; height: 4rem"
+                src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?q=80&w=1317&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="person story"
+              />
+            </div>
+            <div class="gradient-border">
+              <img
+                class="rounded-circle object-fit-cover"
+                style="width: 4rem; height: 4rem"
+                src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?q=80&w=1317&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="person story"
+              />
+            </div>
+            <div class="gradient-border">
+              <img
+                class="rounded-circle object-fit-cover"
+                style="width: 4rem; height: 4rem"
+                src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?q=80&w=1317&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="person story"
+              />
+            </div>
+          </div>
+          <div class="d-flex m-0 px-0 flex-wrap flex-md-nowrap justify-content-end align-items-center col-5 col-sm-4 col-md-3 col-lg-2">
             <button type="button" class="btn btn-transparent rounded-circle text-light">
               <i
-                class="bi bi-filter-circle-fill position-relative d-inline-block fs-3"
+                id="filterToggleIcon"
+                class="bi bi-filter-circle position-relative d-inline-block fs-3"
+              ></i>
+            </button><button type="button" class="btn btn-transparent rounded-circle text-light">
+              <i
+                id="searchIcon"
+                class="bi bi-search position-relative d-inline-block fs-3"
               ></i>
             </button>
             <button type="button" class="btn btn-transparent rounded-circle text-light">
@@ -122,9 +199,51 @@
                 </span>
               </i>
             </button>
-          </div> -->
-        </div>
+          </div>
+
+    </section> -->
+    <section class="container">
+      <!-- Filter and Search icons -->
+    <div class="d-flex justify-content-end align-items-center col-12 button-panel-wrapper">
+        <button class="btn" type="button" id="filterToggle">
+            <i class="bi bi-filter-circle text-white fs-2"></i>
+        </button>
+        <button class="btn" type="button" id="searchToggle">
+            <i class="bi bi-search text-white fs-2"></i>
+        </button>
+       
+    </div>
+    <div id="filterPanel" class="filter-panel">
+      <div class="d-flex justify-content-end align-items-center">
+        <div class="p-2 col-4">
+      <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="switchComments">
+          <label class="form-check-label" for="switchComments">Sort by comments</label>
+      </div>
+      <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="switchReactions">
+          <label class="form-check-label" for="switchReactions">Sort by reactions</label>
+    
+    </div>
+      <div>
+        <input type="text" id="filterInputName" placeholder="Enter author name to filter by">
+        <button class="btn btn-primary" id="filterButton">Filter Posts by Author</button>
+      </div>
+    </div>
+  </div>
+    </div>
+    <div id="searchPanel" class="search-panel">
+      <div class="d-flex justify-content-end align-items-center">
+      <div class="p-2 col-4">
+      <form class="d-flex" id="searchForm" role="search">
+        <input class="form-control me-2" id="searchInput" type="search" placeholder="Search by username or #tag" aria-label="Search">
+        <button class="btn btn-outline-primary" type="submit">Search</button>
+      </form>
+    </div>
+    </div>
+    </div>
     </section>
+
         <section class="container">
 
             <div class="row justify-content-center">
