@@ -1,8 +1,9 @@
 import { load } from "../storage/index.mjs";
 
+
 export async function headers() {
     const accessToken = load("accessToken");
-    //console.log(accessToken);
+    console.log(accessToken);
     
     if (!accessToken) {
         console.error("No access token available.");

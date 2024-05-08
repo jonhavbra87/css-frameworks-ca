@@ -29,11 +29,11 @@ export async function getProfile(name) {
     }
 
     const getProfileURL = `${API_SOCIAL_URL}${action}/${name}`;
-    console.log(getProfileURL);
 
     try {
         const response = await authFetch(getProfileURL);
         if (response.ok) {
+
             return await response.json();
         } else {
             throw new Error(`Failed to fetch profile: ${response.status} ${response.statusText}`);

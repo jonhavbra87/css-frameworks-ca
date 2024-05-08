@@ -1,3 +1,5 @@
+import { reactToPost } from "../../api/posts/reactToPost.mjs";
+import { toggleHeart } from "../../listeners/heartToggle.mjs";
 import { createIconElement } from "./createIconElement.mjs";
 
 
@@ -10,17 +12,20 @@ export function createControlBar(postData) {
 
     const chatIcon = createIconElement("bi bi-chat-dots-fill px-2");
 
-    const likeButton = createIconElement("bi bi-hearts px-2");
+    
+    const likeButton = createIconElement("bi bi-balloon-heart px-2");
     likeButton.setAttribute("role", "button");
-    likeButton.id = "likeButton";
-    likeButton.setAttribute("post-id", postData);
-    // console.log("createControlBar:", postData);
+    likeButton.dataset.likeButton = postData.id;
+    likeButton.addEventListener('click', toggleHeart);
 
     const likeCount = document.createElement("span");
-    likeCount.id = "likeCount";
-    likeCount.textContent = "0";
+    likeButton.id = "likeButton";
+    likeCount.className = "text-white";
+    likeCount.dataset.likeButton = postData.id;
+    likeCount.textContent = postData._count.reactions;
+    likeButton.append(likeCount);
 
-    iconsLeft.append(chatIcon, likeButton);
+    iconsLeft.append(chatIcon, likeButton, likeCount);
 
     const iconsRight = document.createElement("div");
     iconsRight.className = "text-white";
@@ -29,4 +34,6 @@ export function createControlBar(postData) {
 
     controlBar.append(iconsLeft, iconsRight);
     return controlBar;
+
+
 }
