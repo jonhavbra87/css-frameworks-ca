@@ -1,6 +1,5 @@
-import { getPost } from "../api/posts/read.mjs";
+import { getPost } from "../api/posts/getPost.mjs";
 import { removePost } from "../api/posts/delete.mjs";
-
 
 //make the old post data appear in the form. 
 //This is done by getting the post data from the API and then setting the value of the form fields to the data from the API.

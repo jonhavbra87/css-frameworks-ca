@@ -1,4 +1,4 @@
-import { getPost } from "../api/posts/read.mjs";
+import { getPost } from "../api/posts/getPost.mjs";
 import { reactToPost } from "../api/posts/reactToPost.mjs";
 import { renderSpecificPostTemplates } from "./post.mjs";
 
