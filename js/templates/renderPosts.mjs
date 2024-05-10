@@ -1,4 +1,4 @@
-import { getPosts } from "../api/posts/read.mjs";
+import { getPosts } from "../api/posts/getPosts.mjs";
 import { appendPosts } from "./appendPosts.mjs";
 import { filterButton } from "../listeners/filterButton.mjs";
 import { filterByCommentsSwitch } from "../listeners/filterByCommentsSwitch.mjs";
