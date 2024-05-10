@@ -19,7 +19,6 @@ const commentReply = "/comment"
  */
 
 export async function getPosts() {
-    // const updatePostURL = `${API_SOCIAL_URL}${action}${author}`;
     try {
         const posts = await doFetch(API_SOCIAL_URL + action + author + comment + reactions);
         console.log(posts);
