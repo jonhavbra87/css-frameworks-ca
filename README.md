@@ -42,16 +42,16 @@ Then in the same terminal:
 npm run dev
 ```
 
-## How to use app?
+## How to use the app?
 
-At the landingpage, you need to login or register a new user. For registration you need to have a @noroff.no or @stud.noroff.no email address. After registration, you will be sent to "/posts/" page (homepage). There you can view the posts of the social media app.
+At the landingpage, you need to log in or register a new user. For registration, you need to have a @noroff.no or @stud.noroff.no email address. After registration, you will be sent to the "/posts/" page (profile page). There you can view the posts of the social media app.
 If you want to:
 
-- view singel post: "/post/?id=xxxxx" x= wathever id your post is. if you like to see a post, and nt "null", check out postID: 11795.
-- create a new post, go to create, and fill in the form. go to: "/post/create/"
-- edit post: /edit/?id=xxxxx --> You can only edit your own post, so create a post, se in devTools what ID your post has, then paste it inside the url
-- Watch your profile: /profile/ (this is not rendered completely dynamic yet)
-- Edit profile: "/profile/edit/"
+- View single post: Click on the post you want to view.
+- Create a new post: In the menu, there is an option "New Post".
+- Edit post: You can only edit your own posts. If you click on one of your own ost, you get an "edit" and "delete" button. Choose wisely :smiley:
+- Watch your profile: Click on any profile image or in the menu "My Profile"
+- Edit profile: Click on the gear icon to edit your Profile.
 -
 
 ## Contributing
