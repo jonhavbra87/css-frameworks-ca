@@ -41,12 +41,14 @@ export default function router() {
             templates.setupSearchForm();
             listeners.filterToggle();
             listeners.searchToggle();
+            listeners.navigateToProfile();
             break;
         case "/post/":
             utilities.logOut();
             templates.renderPost();
             listeners.reactionButton();
             listeners.backButton();
+            listeners.navigateToProfile();
             break;
         default:
             console.log("I'm not going to do anything because I'm not on the login or register page");

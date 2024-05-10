@@ -5,8 +5,9 @@ export * from "./login.mjs";
 export * from "./updateProfile.mjs";
 export * from "./deletePost.mjs";
 export * from "./editProfileButton.mjs";
-export * from "./viewProfile.mjs";
+export * from "./navigateToProfile.mjs";
 export * from "./backButton.mjs";
 export * from "./reactionButton.mjs"
 export * from "./filterToggle.mjs";
 export * from "./searchToggle.mjs";
+export * from "./navigateToProfile.mjs"
