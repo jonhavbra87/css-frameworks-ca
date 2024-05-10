@@ -4,11 +4,8 @@ export async function doFetch(url) {
     try {
         const response = await authFetch(url);
         const json = await response.json();
-        // console.log(json);
         return json;
     } catch (error) {
         throw new Error(error)
     }
-
-    
 }

@@ -1,6 +1,6 @@
 import { API_SOCIAL_URL } from "../constants.mjs";
 import { doFetch } from "../helpers/doFetch.mjs";
-import { action, author, comment, reactions } from "./read.mjs";
+import { action, author, comment, reactions } from "./getPosts.mjs";
 
 
 /**
