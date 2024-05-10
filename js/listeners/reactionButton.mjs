@@ -1,41 +1,29 @@
 import { reactToPost } from "../api/posts/reactToPost.mjs";
-import { load } from "../storage/index.mjs";
 
-const token = localStorage.getItem("accessToken");
-const parsedToken = JSON.parse(token);
-//console.log("parsedToken:", parsedToken);
-
-
+/**
+ * Adds an event listener to the document to handle reactions.
+ */
 export async function reactionButton() {
     document.addEventListener("click", async (event) => {
         if (event.target.id === "likeButton") {
             console.log("Reaction button clicked");
 
-            const url = new URL(location.href);
+            const postId = event.target.getAttribute("data-post-id");
 
-            let id = document.getElementById("likeButton");
-            // url.searchParams.get("id");
-
-            console.log("id:", id);
-            //load("accessToken");
-            // const postId = event.target.getAttribute("post-id");
-
+            if (!postId) {
+                console.error("No post ID found on the button");
+                return;
+            }
 
             try {
-            
-            // const reactionData = await reactToPost(id);
-      
-            const reactionData = await fetch("https://api.noroff.dev/api/v1/social/posts/11999/react/👍", {
-            method: "PUT",
-            headers: {
-                Authorization: `Bearer ${parsedToken}`,
-            },
-           
-            });  
+                const reactionData = await reactToPost({ id: postId });
+                console.log("reactionData:", reactionData);
 
-            console.log("reactionData:", reactionData);
-
-            return reactionData;
+                // Update the like count if available
+                const likeCountSpan = event.target.querySelector("span");
+                if (likeCountSpan) {
+                    likeCountSpan.textContent = reactionData.newReactionCount;
+                }
             } catch (error) {
                 console.error("Failed to react to post", error);
             }
