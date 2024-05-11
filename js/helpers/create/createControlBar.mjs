@@ -13,7 +13,7 @@ export function createControlBar(postData) {
     //Creates a chatButton element with a chat icon. Attaches post id to the button.
     const chatButton = createIconElement("bi bi-chat-dots-fill px-2");
     chatButton.setAttribute("role", "button");
-    chatButton.setAttribute("aria-label", "Like this post");    
+    chatButton.setAttribute("aria-label", "Add a comment");
     chatButton.dataset.postId = postData.id;
     chatButton.addEventListener('click', toggleChat);
 

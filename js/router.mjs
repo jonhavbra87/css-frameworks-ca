@@ -47,6 +47,7 @@ export default function router() {
             utilities.logOut();
             templates.renderPost();
             listeners.reactionButton();
+            listeners.commentButton();
             listeners.backButton();
             listeners.navigateToProfile();
             break;
