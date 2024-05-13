@@ -26,11 +26,6 @@ export function createControlBar(postData) {
     chatCount.textContent = postData._count.comments;
     chatButton.append(chatCount);
 
- 
-
-    
-    
-
     //Creates a likeButton element with a heart icon and a like count. Attaches post id to the button.
     const likeButton = createIconElement("bi bi-balloon-heart px-2");
     likeButton.setAttribute("role", "button");
