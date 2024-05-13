@@ -17,8 +17,10 @@ export async function renderPost() {
 
       if (postData) {
           const container = document.querySelector("#post");
+
           renderSpecificPostTemplates(postData, container);
-          if (postData.comments) {
+
+          if (postData._count.comments > 0) {
               const commentsContainer = createCommentsContainer(postData);
               container.append(commentsContainer);
           }
