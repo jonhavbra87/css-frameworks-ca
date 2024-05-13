@@ -20,10 +20,13 @@ const commentReply = "/comment"
 
 export async function getPosts() {
     try {
-        const posts = await doFetch(API_SOCIAL_URL + action + author + comment + reactions);
+        const url = `${API_SOCIAL_URL}${action}${author}${comment}${reactions}`;
+        const posts = await doFetch(url);
         console.log(posts);
         return posts;
     } catch (error) {
         throw new Error(error)
     }
 }
+
+//bruke finally etter catch for å rydde opp etter fetch ? 
