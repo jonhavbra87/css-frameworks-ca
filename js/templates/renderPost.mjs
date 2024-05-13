@@ -1,5 +1,6 @@
 import { getPost } from "../api/posts/getPost.mjs";
 import { reactToPost } from "../api/posts/reactToPost.mjs";
+import { createCommentsContainer } from "../helpers/create/index.mjs";
 import { renderSpecificPostTemplates } from "./post.mjs";
 
 //fetching med loop, 500 stk, så filtrere.
@@ -17,6 +18,10 @@ export async function renderPost() {
       if (postData) {
           const container = document.querySelector("#post");
           renderSpecificPostTemplates(postData, container);
+          if (postData.comments) {
+              const commentsContainer = createCommentsContainer(postData);
+              container.append(commentsContainer);
+          }
       } else {
           console.log("No post found with ID:", id);
       }

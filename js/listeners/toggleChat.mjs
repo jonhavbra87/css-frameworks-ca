@@ -1,20 +1,25 @@
 import { commentOnPost } from "../api/posts/commentOnPost.mjs";
+import { createCommentsContainer } from "../helpers/create/createCommentsContainer.mjs";
 
 /**
  * Toggles the visibility of the chat input field for submitting comments.
  * 
  * @param {Event} event - The click event triggered by the chat button.
  */
-export function toggleChat(event) {
+export async function toggleChat(event) {
     const chatButton = event.target.closest('[data-post-id]');
     const postId = chatButton.dataset.postId;
+    console.log("postId:", postId);
 
     // Søk etter eksisterende chat-skjema under chatButton
     let chatForm = document.querySelector(`#comment-form-${postId}`);
+
     if (chatForm) {
+        console.log("Removing existing comment form");
         chatForm.remove(); // Fjern hvis skjemaet allerede finnes (skjul det)
     } else {
         // Opprett et nytt kommentarskjema
+        console.log("Creating new comment form");
         chatForm = document.createElement("form");
         chatForm.id = `comment-form-${postId}`;
         chatForm.className = "comment-form";
@@ -41,20 +46,46 @@ export function toggleChat(event) {
             const commentText = inputField.value.trim();
             if (commentText) {
                 try {
+                    console.log("Submitting comment:", commentText);
                     await commentOnPost(postId, commentText);
-                    inputField.value = ""; // Tøm feltet etter innsending
+                    inputField.value = "";
                     console.log("Comment submitted successfully");
+                    alert(`Success! Your comment: ${commentText}`);    
+                    
+                    // Oppdater chatCount etter vellykket innsending
+                    updateChatCount(postId);
+                    
+                    //legg til ny kommentar i kommentarseksjonen
+                    const commentsContainer = document.querySelector(`#comments-container-${postId}`);
+                    createCommentsContainer(postId);
+
+
+                    // Legg til den nye kommentaren i kommentarseksjonen
+                    // const commentsContainer = document.querySelector(`#comments-container-${postId}`);
+                    // if (commentsContainer) {
+                    //     const commentElement = createCommentElement(newComment);
+                    //     commentsContainer.appendChild(commentElement);
+                    // }
                 } catch (error) {
                     console.error("Failed to submit comment:", error);
                 }
             }
-        });
+        });        
 
         // Legg til skjemaet etter chatButton
         chatButton.parentNode.append(chatForm);
     }
 }
 
+
+function updateChatCount(postId) {
+    const chatButton = document.querySelector(`[data-post-id="${postId}"]`);
+    const chatCount = chatButton.querySelector(`[data-chat-button="${postId}"]`);
+    if (chatCount) {
+        const currentCount = parseInt(chatCount.textContent, 0);
+        chatCount.textContent = currentCount + 1;
+    }
+}
 
 // import { commentOnPost } from "../api/posts/commentOnPost.mjs";
 
