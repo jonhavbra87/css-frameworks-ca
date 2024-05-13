@@ -11,6 +11,7 @@ export default function router() {
         case "/profile/":
             templates.renderProfile();
             listeners.editProfileButton();
+            templates.viewProfilePosts();
             utilities.logOut();
             break;
         case "/profile/login/":
@@ -41,7 +42,6 @@ export default function router() {
             templates.setupSearchForm();
             listeners.filterToggle();
             listeners.searchToggle();
-            listeners.navigateToProfile();
             break;
         case "/post/":
             utilities.logOut();
