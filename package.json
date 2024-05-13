@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/jonhavbra87/css-frameworks-ca/blob/main/README.md",
   "devDependencies": {
-    "live-server": "^1.2.2",
+    "live-server": "^1.1.0",
     "npm-run-all": "^4.1.5",
     "sass": "^1.74.1"
   },
