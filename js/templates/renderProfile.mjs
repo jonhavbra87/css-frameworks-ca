@@ -1,4 +1,4 @@
-import { getProfile } from "../api/profiles/read.mjs";
+import { getProfile } from "../api/profiles/getProfile.mjs";
 import { profileTemplate } from "./profileTemplate.mjs";
 
 export async function renderProfile() {
@@ -12,7 +12,9 @@ export async function renderProfile() {
 
      if (profileData) {
         const container = document.querySelector("#profileContainer");
+
         const profileCard = profileTemplate(profileData, container);  
+        
         container.append(profileCard);  
     } else {
         console.log("No profile found with name-id:", name);
