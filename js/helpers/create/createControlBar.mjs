@@ -17,6 +17,7 @@ export function createControlBar(postData) {
     chatButton.dataset.postId = postData.id;
     chatButton.addEventListener('click', toggleChat);
 
+
     // Creates a span element to display the chat count. Attaches post id to the span.
     const chatCount = document.createElement("span");
     chatButton.id = "chatButton";
@@ -24,6 +25,11 @@ export function createControlBar(postData) {
     chatCount.classList.add("text-white");
     chatCount.textContent = postData._count.comments;
     chatButton.append(chatCount);
+
+ 
+
+    
+    
 
     //Creates a likeButton element with a heart icon and a like count. Attaches post id to the button.
     const likeButton = createIconElement("bi bi-balloon-heart px-2");
