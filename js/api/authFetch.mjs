@@ -1,34 +1,3 @@
-import { load } from "../storage/index.mjs";
-
-/**
- * Retrieves headers required for authentication.
- * @returns {Promise<Object>} A promise that resolves to the headers object.
- * @throws {Error} If an access token cannot be found.
- */
-export async function headers() {
-    try {
-        // Load access token from storage
-        const accessToken = load("accessToken");
-        if (!accessToken) {
-            console.error("No access token available.");
-            throw new Error("No access token available. Please log in to continue.");
-        } else {
-            console.log("Access token available");
-        }
-
-        // Return headers object if token exists
-        return {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${accessToken}`
-        };
-
-    } catch (error) {
-        // Catch any errors in the token loading process and throw a meaningful error
-        console.error("Error retrieving headers:", error.message);
-        throw new Error("Unable to retrieve headers due to an access token issue.");
-    }
-}
-
 /**
  * Makes an authenticated fetch request.
  * @param {string} url - The API URL to make the request to. 
@@ -36,6 +5,8 @@ export async function headers() {
  * @returns {Promise<Response>} A promise that resolves to the fetch response object.
  * @throws {Error} If there's an error during the fetch request.
  */
+
+import { headers } from "./headers.mjs";
 
 export async function authFetch(url, options = {}) {
     try {
