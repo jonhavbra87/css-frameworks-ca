@@ -1,6 +1,3 @@
-import { authFetch } from "../authFetch.mjs";
-import { API_SOCIAL_URL } from "../constants.mjs";
-
 /**
  * Sends a comment to a post.
  * 
@@ -11,39 +8,48 @@ import { API_SOCIAL_URL } from "../constants.mjs";
  * @throws {Error} If the HTTP request fails.
  * @returns {Promise<Object>} A promise that resolves to the comment result.
  */
-export async function commentOnPost(postData, comment) {
-    if (!postData || !postData.id || !comment) {
-        throw new Error("Post data must include an ID and comment text");
+
+import { authFetch } from "../authFetch.mjs";
+import { API_SOCIAL_URL } from "../constants.mjs";
+
+const action = "/posts";
+const method = "POST";
+const theComment = "/comment";
+
+
+export async function commentOnPost(postId, comment) {
+    if (!postId || !comment) {
+        throw new Error(`Post ID and comment text are required. Received postId: ${postId}, comment: ${comment}`);
     }
 
-    const action = "/posts";
-    const method = "POST";
-    const comments = "/comment";
-    const commentURL = `${API_SOCIAL_URL}${action}/${postData.id}${comments}`;
+    // const commentURL = `${API_SOCIAL_URL}/posts/${postId}/comment`;
+    const commentURL = `${API_SOCIAL_URL}${action}/${postId}${theComment}`;
+    console.log("Comment URL:", commentURL); 
+    console.log("Sending comment:", comment); 
 
     try {
         const response = await authFetch(commentURL, {
-            method: method,
+            method: "POST",
             headers: {
-                'Content-Type': 'application/json', // Ensure JSON header is set
-                'Authorization': `Bearer ${localStorage.getItem("accessToken")}` // Include Authorization header
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${localStorage.getItem("accessToken")}`
             },
-            body: JSON.stringify({ body: comment }) // Send the comment text
+            body: JSON.stringify({ body: comment })
         });
 
-        console.log("response from authFetch inside sendComment:", response);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.statusText}`);
         }
 
         const result = await response.json();
-        console.log("sendComment result:", result);
+        console.log("Comment submitted successfully:", result);
         return result;
     } catch (error) {
         console.error("Error while sending comment to post:", error);
         throw error;
     }
 }
+
 
 
 // import { authFetch } from "../authFetch.mjs";
