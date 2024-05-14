@@ -4,7 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register</title>
-    <link rel="stylesheet" href="../../dist/css/index.css"/>
+    <link rel="stylesheet" href="../../dist/css/index.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
     <script type="module" src="../../js/index.mjs"></script>
     <!-- <script
       defer
@@ -40,14 +50,14 @@
           </div>
           <div class="col-10 col-md-6">
             <form id="registerForm">
-              <div class="form-group  mb-3">
+              <div class="form-group mb-3">
                 <input
-                class="form-control"
-                type="text"
-                name="name"
-                pattern="^\w+$"
-                title="User name must unly contain lower case and upper case letters, numbers and underscore (_). Example: My_User123" 
-                placeholder="Username"
+                  class="form-control"
+                  type="text"
+                  name="name"
+                  pattern="^\w+$"
+                  title="User name must unly contain lower case and upper case letters, numbers and underscore (_). Example: My_User123"
+                  placeholder="Username"
                 />
                 <div class="invalid-feedback text-secondary">
                   Please enter your email.
@@ -55,12 +65,12 @@
               </div>
               <div class="form-group mb-3">
                 <input
-                class="form-control"
-                type="email"
-                name="email"
-                placeholder="Email"
-                title="Only @(stud.)noroff.no domains are allowed to register." 
-                required
+                  class="form-control"
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  title="Only @(stud.)noroff.no domains are allowed to register."
+                  required
                 />
                 <div class="invalid-feedback text-secondary">
                   Please enter your email.
@@ -68,41 +78,41 @@
               </div>
               <div class="form-group mb-3">
                 <input
-                class="form-control"
-                type="password"
-                name="password"
-                placeholder="Password"
+                  class="form-control"
+                  type="password"
+                  name="password"
+                  placeholder="Password"
                 />
                 <div class="invalid-feedback text-secondary">
                   Password must include at least 12 letters & numbers.
                 </div>
               </div>
-              <div class="form-group  mb-3">
+              <div class="form-group mb-3">
                 <input
-                class="form-control"
-                type="url"
-                name="banner"
-                placeholder="Banner"
+                  class="form-control"
+                  type="url"
+                  name="banner"
+                  placeholder="Banner"
                 />
                 <div class="invalid-feedback text-secondary">
                   Please enter a valid image url.
                 </div>
               </div>
-              <div class="form-group  mb-3">
+              <div class="form-group mb-3">
                 <input
-                class="form-control"
-                type="url"
-                name="avater"
-                placeholder="Avatar"
+                  class="form-control"
+                  type="url"
+                  name="avater"
+                  placeholder="Avatar"
                 />
                 <div class="invalid-feedback text-secondary">
                   Please enter a valid image url.
                 </div>
               </div>
 
-
-                <button class="btn btn-dark btn-lg" type="submit" >Register</button>
-
+              <button class="btn btn-dark btn-lg" type="submit">
+                Register
+              </button>
             </form>
           </div>
         </div>
