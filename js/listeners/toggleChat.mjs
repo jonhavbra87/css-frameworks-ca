@@ -6,41 +6,42 @@ import { createCommentsContainer } from "../helpers/create/createCommentsContain
  * 
  * @param {Event} event - The click event triggered by the chat button.
  */
+
 export async function toggleChat(event) {
     const chatButton = event.target.closest('[data-post-id]');
     const postId = chatButton.dataset.postId;
     console.log("postId:", postId);
 
-    // Søk etter eksisterende chat-skjema under chatButton
+    // Search for existing chat form under chatButton
     let chatForm = document.querySelector(`#comment-form-${postId}`);
 
     if (chatForm) {
         console.log("Removing existing comment form");
-        chatForm.remove(); // Fjern hvis skjemaet allerede finnes (skjul det)
+        chatForm.remove(); // Remove if the form already exists (hide it)
     } else {
-        // Opprett et nytt kommentarskjema
+        // Create a new comment form
         console.log("Creating new comment form");
         chatForm = document.createElement("form");
         chatForm.id = `comment-form-${postId}`;
         chatForm.className = "comment-form";
 
-        // Opprett et input-felt for å skrive en kommentar
+        // Create an input field for writing a comment
         const inputField = document.createElement("input");
         inputField.type = "text";
         inputField.className = "comment-input";
-        inputField.placeholder = "Skriv en kommentar...";
+        inputField.placeholder = "Write a comment...";
         inputField.dataset.postId = postId;
 
-        // Opprett en send-knapp
+        // Create a submit button
         const submitButton = document.createElement("button");
         submitButton.type = "submit";
         submitButton.className = "btn btn-primary";
-        submitButton.textContent = "Send";
+        submitButton.textContent = "Comment";
 
-        // Legg input-feltet og send-knappen til i skjemaet
+        //Adding inputField and submitButton to the chatForm
         chatForm.append(inputField, submitButton);
 
-        // Legg til event listener for å sende inn kommentaren
+        // Adding a eventListener for submitting the comment
         chatForm.addEventListener("submit", async (e) => {
             e.preventDefault();
             const commentText = inputField.value.trim();
@@ -51,21 +52,14 @@ export async function toggleChat(event) {
                     inputField.value = "";
                     console.log("Comment submitted successfully");
                     alert(`Success! Your comment: ${commentText}`);    
-                    
-                    // Oppdater chatCount etter vellykket innsending
+                    chatForm.remove(); 
+                    //Updates the chat count
                     updateChatCount(postId);
                     
-                    //legg til ny kommentar i kommentarseksjonen
+                    //Adding new comments to the post feed
                     const commentsContainer = document.querySelector(`#comments-container-${postId}`);
                     createCommentsContainer(postId);
 
-
-                    // Legg til den nye kommentaren i kommentarseksjonen
-                    // const commentsContainer = document.querySelector(`#comments-container-${postId}`);
-                    // if (commentsContainer) {
-                    //     const commentElement = createCommentElement(newComment);
-                    //     commentsContainer.appendChild(commentElement);
-                    // }
                 } catch (error) {
                     console.error("Failed to submit comment:", error);
                 }

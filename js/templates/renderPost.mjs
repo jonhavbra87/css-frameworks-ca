@@ -1,6 +1,7 @@
 import { getPost } from "../api/posts/getPost.mjs";
 import { reactToPost } from "../api/posts/reactToPost.mjs";
 import { createCommentsContainer } from "../helpers/create/index.mjs";
+import { displayErrorMessage } from "../utilities/displayErrorMessage.mjs";
 import { renderSpecificPostTemplates } from "./post.mjs";
 
 //fetching med loop, 500 stk, så filtrere.
@@ -25,7 +26,8 @@ export async function renderPost() {
               container.append(commentsContainer);
           }
       } else {
-          console.log("No post found with ID:", id);
+          displayErrorMessage(error);
+        //console.log("No post found with ID:", id);
       }
   } catch (error) {
       //Developer console log
