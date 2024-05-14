@@ -1,8 +1,7 @@
-export function displayErrorMessage(error) {
-    const container = document.querySelector("#errorMessage");
-    
+export function displayErrorMessage(container, error) {
     const errorContainer = document.createElement("div");
-    errorContainer.classList.add("alert", "alert-primary");
+    errorContainer.id = "errorMessage";
+    errorContainer.classList.add("toast", "alert-primary", "text-center", "my-3");
 
     const errorMessageContent = document.createElement("h3");
     errorMessageContent.textContent = `${error}`;
@@ -11,5 +10,9 @@ export function displayErrorMessage(error) {
 
     errorContainer.append(errorMessageContent);
 
-    return container.append(errorContainer);
+    container.innerHTML = "";
+
+    container.append(errorContainer);
+
+    return errorContainer;
 }

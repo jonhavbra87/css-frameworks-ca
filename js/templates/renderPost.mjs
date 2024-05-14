@@ -25,11 +25,11 @@ export async function renderPost() {
               const commentsContainer = createCommentsContainer(postData);
               container.append(commentsContainer);
           }
-      } else {
-          displayErrorMessage(error);
-        //console.log("No post found with ID:", id);
       }
-  } catch (error) {
+    } catch (error) {
+      const errorMessageContainer = document.querySelector("#errorMessage");
+      displayErrorMessage(errorMessageContainer, error.message);
+      
       //Developer console log
       console.log("Unable to fetch api", error);
   }
