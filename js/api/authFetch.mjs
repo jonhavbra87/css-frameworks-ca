@@ -1,3 +1,5 @@
+import { headers } from "./headers.mjs";
+
 /**
  * Makes an authenticated fetch request.
  * @param {string} url - The API URL to make the request to. 
@@ -6,7 +8,6 @@
  * @throws {Error} If there's an error during the fetch request.
  */
 
-import { headers } from "./headers.mjs";
 
 export async function authFetch(url, options = {}) {
     try {
@@ -31,6 +32,9 @@ export async function authFetch(url, options = {}) {
     } catch (error) {
         // Catch any errors during the fetch process and log them
         console.error("Error during authenticated fetch:", error.message);
+        const errorMessageContainer = document.querySelector("#errorMessage");
+        displayErrorMessage(errorMessageContainer, error.message);
+       
         throw new Error("Unable to complete the authenticated request due to an error.");
     }
 }
