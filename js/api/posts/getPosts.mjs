@@ -25,6 +25,9 @@ export async function getPosts() {
         console.log(posts);
         return posts;
     } catch (error) {
+       
+        const errorMessageContainer = document.querySelector("#errorMessage");
+        displayErrorMessage(errorMessageContainer, error);
         throw new Error(error)
     }
 }

@@ -1,12 +1,12 @@
 import { postTemplate } from "./postTemplate.mjs";
 
-export function appendPosts(postDataList, parent) {
-    if (!postDataList) {
+export function appendPosts(postData, parent) {
+    if (!postData) {
         console.error("Failed to render posts: postDataList is undefined");
         return;
     }
     try {
-        postDataList.forEach(postData => {
+        postData.forEach(postData => {
             const cardContent = postTemplate(postData);
             if (cardContent) {
                 // Add click event on every card

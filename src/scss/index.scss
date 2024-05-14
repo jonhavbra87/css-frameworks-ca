@@ -104,7 +104,11 @@ $gray-900: #222831; //Dark color
     width: 100%;
     border-radius: 50%; 
 }
-  
+
+.box-shadow {
+    box-shadow: 0 0 15px rgba(153, 141, 76, 0.3);
+}
+
 .custom-border-bottom {
     border-bottom: 3px solid !important;
 }

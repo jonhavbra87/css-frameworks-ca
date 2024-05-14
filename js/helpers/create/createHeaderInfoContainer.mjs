@@ -7,7 +7,7 @@ export function createHeaderInfoContainer(postData) {
 
     const cardTitle = document.createElement("h4");
     cardTitle.classList.add("fw-bold", "mb-1");
-    cardTitle.textContent = postData.title; // Assuming postData.title is available
+    cardTitle.textContent = postData.title;
     
     const cardTags = document.createElement("p");
     cardTags.classList.add("text-wrap", "fw-light");

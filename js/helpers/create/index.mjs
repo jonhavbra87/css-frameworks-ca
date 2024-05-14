@@ -6,3 +6,4 @@ export * from "./createIconElement.mjs";
 export * from "./createMediaContainer.mjs";
 export * from "./createUserInfoContainer.mjs";
 export * from "./createImgWrapperContainer.mjs";
+export * from "./createCommentsContainer.mjs"

@@ -4,47 +4,35 @@
  * @param {string} profileName - The name of the profile to navigate to.
  */
 
-export function navigateToProfile(name) {
+import { getProfile } from "../api/profiles/getProfile.mjs";
+
+export async function navigateToProfile(name) {
+    console.log("Navigating to profile:", name);
+
     if (!name) {
         console.error("Profile name is required to navigate.");
         return;
     }
   
-    // Construct the URL for the profile page with the given name
-    const profileUrl = `/profile.html?name=${encodeURIComponent(name)}`;
-    console.log("Navigating to:", profileUrl);
+    try {
+        // Fetch the profile to ensure it exists
+        const profileData = await getProfile(name);
+        console.log("Profile data:", profileData);
+        
+        const profileUrl = `/profile/?name=${name}`;
+        console.log("Navigating to:", profileUrl);
 
-    // Navigate to the profile page
-    window.location.href = profileUrl;
+        // Navigate to the profile page
+        window.location.href = profileUrl;
+    } catch (error) {
+        console.error("Error navigating to profile:", error);
+        // Optionally display an error message to the user
+        alert("Failed to navigate to profile. Please try again.");
+    }
+
+    // const profileUrl = `/profile/?name=${name}`;
+    // console.log("Navigating to:", profileUrl);
+
+    // // Navigate to the profile page
+    // window.location.href = profileUrl;
 }
-
-
-// export function viewProfile() {
-//     const viewProfileButton = document.getElementById("profileLink");
-//     viewProfileButton.addEventListener("click", async () => {
-//         console.log("View profile button clicked");
-//         location.href = "/profile/";
-//     });
-// }
-
-// /**
-//  * Navigates to the profile page of the clicked user.
-//  * 
-//  * @param {Event} event - The event object from the click event.
-//  */
-// function navigateToProfile(event) {
-//     const profileElement = event.target;
-//     const userId = profileElement.dataset.userId;
-
-//     if (!userId) {
-//         console.error("No user ID found on the clicked element.");
-//         return;
-//     }
-
-//     // Construct the URL for the profile page
-//     const profileUrl = `/profile.html?userId=${userId}`;
-//     console.log("Navigating to:", profileUrl);
-
-//     // Navigate to the profile page
-//     window.location.href = profileUrl;
-// }

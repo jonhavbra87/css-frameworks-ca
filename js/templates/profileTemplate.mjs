@@ -10,7 +10,7 @@ export function profileTemplate(profileData) {
     bannerImg.style.width = "100%";
     bannerImg.style.height = "200px";
     bannerImg.style.objectFit = "cover";
-    bannerImg.src = profileData.banner || "default-banner-url.jpg";
+    bannerImg.src = profileData.banner || "https://images.unsplash.com/photo-1503614472-8c93d56e92ce?q=80&w=1111&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
     bannerImg.alt = "Banner";
 
     // Profile Image (Clickable to navigate to profile)

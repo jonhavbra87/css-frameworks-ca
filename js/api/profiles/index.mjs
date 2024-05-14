@@ -1,2 +1,2 @@
-export * from "./read.mjs";
+export * from "./getProfile.mjs";
 export * from "./update.mjs";
