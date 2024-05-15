@@ -1,4 +1,3 @@
-import { displayErrorMessage } from "../../utilities/displayErrorMessage.mjs";
 import { API_SOCIAL_URL } from "../constants.mjs";
 import { doFetch } from "../helpers/doFetch.mjs";
 

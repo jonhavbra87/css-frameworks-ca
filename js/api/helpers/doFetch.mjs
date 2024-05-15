@@ -1,4 +1,3 @@
-import { displayErrorMessage } from "../../utilities/displayErrorMessage.mjs";
 import { authFetch } from "../authFetch.mjs";
 
 /**
