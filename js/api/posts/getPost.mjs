@@ -23,7 +23,6 @@ export async function getPost(id) {
         throw new Error("Get post requires a postID");
     } try {
         const post = await doFetch(`${API_SOCIAL_URL}${action}/${id}${author}${comment}${reactions}`);
-        console.log(post);
         return post;
     } catch (error) {
         throw new Error(error)   

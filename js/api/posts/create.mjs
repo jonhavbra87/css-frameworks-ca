@@ -5,20 +5,24 @@ const action = "/posts";
 const method = "POST";
 
 export async function createPost(postData) {
-    const createPostURL = API_SOCIAL_URL + action;
+    if (!postData) {
+        throw new Error(`Create post requires a post object`);
+    }
+try {
+      const createPostURL = API_SOCIAL_URL + action;
+      const response = await authFetch(createPostURL, {
+          method,
+          body: JSON.stringify(postData)
+      });
 
-    const response = await authFetch(createPostURL, {
-        method,
-        body: JSON.stringify(postData)
-  });
+      const result = await response.json();
 
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.statusText}`);
+      window.location.href = "/posts/";
+    
+      return result;
+
+  } catch (error) {
+    throw new Error(`${response.statusText}`);
   }
 
-  const result = await response.json();
-
-  window.location.href = "/posts/";
-
-  return result;
 }

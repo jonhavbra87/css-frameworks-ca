@@ -1,3 +1,4 @@
+import { displayErrorMessage } from "../../utilities/displayErrorMessage.mjs";
 import { authFetch } from "../authFetch.mjs";
 
 /**
@@ -21,8 +22,9 @@ export async function doFetch(url) {
         const json = await response.json();
         return json;
     } catch (error) {
-        throw new Error(error)
-        alert(error)
+       
+        throw new Error(`Error fetching data: ${error.message}`)
+        
     }
 }
 

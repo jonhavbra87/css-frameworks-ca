@@ -2,7 +2,7 @@ import { authFetch } from "../authFetch.mjs";
 import { API_SOCIAL_URL } from "../constants.mjs";
 
 const action = "/posts";
-const method = "delete";
+const method = "DELETE";
 
 export async function removePost(id) {
     if (!id) {
@@ -14,10 +14,16 @@ export async function removePost(id) {
     const response = await authFetch(deletePostURL, {
         method
   });
-  return await response.json();
+
+  const result = await response.json();
+  
+  window.location.href = "/posts/";
+
+  return result;
+
   } catch (error) {
-    console.error('Error:', error);
-    throw error;
+
+    throw new Error(`${response.statusText}`);
   }
 
 }

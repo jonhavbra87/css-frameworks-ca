@@ -1,3 +1,4 @@
+import { displayErrorMessage } from "../../utilities/displayErrorMessage.mjs";
 import { API_SOCIAL_URL } from "../constants.mjs";
 import { doFetch } from "../helpers/doFetch.mjs";
 
@@ -6,8 +7,6 @@ export const action = "/posts"
 export const author = "?_author=true"
 export const comment = "&_comments=true"
 export const reactions = "&_reactions=true"
-const tag = "?_tag=my_tag"
-const commentReply = "/comment"
 
 /**
  * Fetches posts from a social API with detailed query parameters to include authors, comments, and reactions.
@@ -22,12 +21,8 @@ export async function getPosts() {
     try {
         const url = `${API_SOCIAL_URL}${action}${author}${comment}${reactions}`;
         const posts = await doFetch(url);
-        console.log(posts);
         return posts;
     } catch (error) {
-       
-        const errorMessageContainer = document.querySelector("#errorMessage");
-        displayErrorMessage(errorMessageContainer, error);
         throw new Error(error)
     }
 }

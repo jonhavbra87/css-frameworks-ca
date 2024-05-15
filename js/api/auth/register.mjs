@@ -1,8 +1,5 @@
 import { API_SOCIAL_URL } from "../constants.mjs";
 
-const action = "/auth/register";
-const method = "post";
-
 /** 
  * Registers a new user profile to the social network API.
  * This function takes a profile object, converts it to JSON,
@@ -15,6 +12,10 @@ const method = "post";
  * register(profile)
  * ```
  * **/
+
+const action = "/auth/register";
+const method = "post";
+
 
 export async function register(profile) {
   const registerURL = API_SOCIAL_URL + action;
