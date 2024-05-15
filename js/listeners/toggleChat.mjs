@@ -1,6 +1,5 @@
 import { commentOnPost } from "../api/posts/commentOnPost.mjs";
 import { createCommentsContainer } from "../helpers/create/createCommentsContainer.mjs";
-import { displayErrorMessage } from "../utilities/displayErrorMessage.mjs";
 
 /**
  * Toggles the visibility of the chat input field for submitting comments.
@@ -62,9 +61,7 @@ export async function toggleChat(event) {
                     createCommentsContainer(postId);
 
                 } catch (error) {
-                    const errorMessageContainer = document.querySelector("#errorMessage");
-                    displayErrorMessage(errorMessageContainer, error);
-                    console.error("Failed to submit comment:", error);
+                    alert("Failed to submit comment");
                 }
             }
         });        

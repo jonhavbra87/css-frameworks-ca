@@ -1,13 +1,12 @@
 import { getPost } from "../api/posts/getPost.mjs";
 import { reactToPost } from "../api/posts/reactToPost.mjs";
 import { createCommentsContainer } from "../helpers/create/index.mjs";
-import { displayErrorMessage } from "../utilities/displayErrorMessage.mjs";
+
 import { renderSpecificPostTemplates } from "./post.mjs";
 
 //fetching med loop, 500 stk, så filtrere.
 
 export async function renderPost() {
-  console.log("I'm on the post page");
 
   try {
       // Get the blog post id from the URL
@@ -27,10 +26,6 @@ export async function renderPost() {
           }
       }
     } catch (error) {
-      const errorMessageContainer = document.querySelector("#errorMessage");
-      displayErrorMessage(errorMessageContainer, error.message);
-      
-      //Developer console log
-      console.log("Unable to fetch api", error);
+      throw new Error(`Error rendering post: ${error.message}`);
   }
 }

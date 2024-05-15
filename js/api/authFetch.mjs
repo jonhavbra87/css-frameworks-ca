@@ -30,9 +30,6 @@ export async function authFetch(url, options = {}) {
         return response;
 
     } catch (error) {
-        // Catch any errors during the fetch process and log them
-        console.error("Error during authenticated fetch:", error.message);
-        displayErrorMessage(error.message);
        
         throw new Error("Unable to complete the authenticated request due to an error.");
     }
