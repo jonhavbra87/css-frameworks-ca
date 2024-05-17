@@ -10,5 +10,5 @@ export * from "./backButton.mjs";
 export * from "./reactionButton.mjs"
 export * from "./commentButton.mjs"
 export * from "./filterToggle.mjs";
-export * from "./searchToggle.mjs";
+export * from "./toggleSearch.mjs";
 export * from "./navigateToProfile.mjs"

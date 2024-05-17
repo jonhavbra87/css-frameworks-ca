@@ -41,13 +41,12 @@ export default function router() {
             templates.renderPosts();
             templates.setupSearchForm();
             listeners.filterToggle();
-            listeners.searchToggle();
+            listeners.toggleSearch();
             break;
         case "/post/":
             utilities.logOut();
             templates.renderPost();
             listeners.reactionButton();
-            listeners.commentButton();
             listeners.backButton();
             listeners.navigateToProfile();
             break;

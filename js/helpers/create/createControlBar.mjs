@@ -1,5 +1,5 @@
 import { toggleHeart } from "../../listeners/heartToggle.mjs";
-import { toggleChat } from "../../listeners/toggleChat.mjs";
+import { toggleComment } from "../../listeners/toggleComment.mjs";
 import { createIconElement } from "./createIconElement.mjs";
 
 
@@ -15,7 +15,7 @@ export function createControlBar(postData) {
     chatButton.setAttribute("role", "button");
     chatButton.setAttribute("aria-label", "Add a comment");
     chatButton.dataset.postId = postData.id;
-    chatButton.addEventListener('click', toggleChat);
+    chatButton.addEventListener('click', toggleComment);
 
 
     // Creates a span element to display the chat count. Attaches post id to the span.
