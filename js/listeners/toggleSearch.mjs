@@ -1,10 +1,10 @@
-export function searchToggle() {
-    const searchToggle = document.getElementById('searchToggle');
-    const searchIcon = searchToggle.querySelector('i');
+export function toggleSearch() {
+    const toggleSearch = document.getElementById('toggleSearch');
+    const searchIcon = toggleSearch.querySelector('i');
     const searchPanel = document.getElementById('searchPanel');
 
-    // Event listener for SearchToggle button
-    searchToggle.addEventListener('click', function() {
+    // Event listener for toggleSearch button
+    toggleSearch.addEventListener('click', function() {
         // Toggle the 'collapse' class to show/hide the searchPanel
         searchPanel.classList.toggle('search-visible');
         searchPanel.classList.toggle('search-hidden');
