@@ -1,12 +1,11 @@
-export function filterToggle() {
-    // Get the toggle button and the panel
-    const filterToggle = document.getElementById('filterToggle');
-    const filterIcon = filterToggle.querySelector('i');
+export function toggleFilter() {
+  
+    const toggleFilter = document.getElementById('toggleFilter');
+    const filterIcon = toggleFilter.querySelector('i');
     const filterPanel = document.getElementById('filterPanel');
 
-    // Event listener for toggle button
-    filterToggle.addEventListener('click', function() {
-        // Toggle the 'collapse' class to show/hide the filterPanel
+    toggleFilter.addEventListener('click', function() {
+      
         
         filterPanel.classList.toggle('filter-visible');
         filterPanel.classList.toggle('filter-hidden');

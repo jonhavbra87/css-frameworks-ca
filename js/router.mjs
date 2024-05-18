@@ -44,8 +44,8 @@ export default function router() {
         case "/posts/":
             utilities.logOut();
             templates.renderPosts();
-            templates.setupSearchForm();
-            listeners.filterToggle();
+            templates.searchPosts();
+            listeners.toggleFilter();
             listeners.toggleSearch();
             listeners.navigateToLoggedInProfileListener();
             break;

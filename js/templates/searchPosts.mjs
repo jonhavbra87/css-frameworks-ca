@@ -1,11 +1,19 @@
-export async function setupSearchForm() {
+export async function searchPosts() {
+    const formElement = document.getElementById("searchForm"); // Assuming you have a form with id="searchForm"
     const inputElement = document.getElementById("searchInput");
-    inputElement.addEventListener("submit", function() {
-        let value = this.value.toLowerCase();
-        const containers = document.querySelectorAll(".card"); 
-        containers.forEach(function(container) {
-            const text = container.textContent.toLowerCase();
-            container.style.display = text.includes(value) ? '' : 'none';
+
+    if (formElement && inputElement) {
+        formElement.addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            const value = inputElement.value.toLowerCase();
+            
+            const containers = document.querySelectorAll(".card"); 
+
+            containers.forEach(function(container) {
+                const text = container.textContent.toLowerCase();
+                container.style.display = text.includes(value) ? '' : 'none';
+            });
         });
-    });
+    }
 }
