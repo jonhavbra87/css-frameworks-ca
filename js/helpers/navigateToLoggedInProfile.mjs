@@ -3,21 +3,21 @@
  * 
  * @param {string} profileName - The name of the profile to navigate to.
  */
-export async function navigateToProfile() {
+export async function navigateToLoggedInProfile() {
     try {
         // Retrieve profile data from localStorage
         const storedProfile = localStorage.getItem('profile');
         
         if (storedProfile) {
-            const profileData = JSON.parse(storedProfile);
-            console.log("Profile data from localStorage:", profileData);
+            const storedProfileData = JSON.parse(storedProfile);
+            console.log("Profile data from localStorage:", storedProfileData);
 
-            if (!profileData || !profileData.name) {
+            if (!storedProfileData || !storedProfileData.name) {
                 throw new Error("Profile data is invalid.");
             }
 
             // Use the name from profile data
-            const profileName = profileData.name;
+            const profileName = storedProfileData.name;
             const profileUrl = `/profile/?name=${profileName}`;
             console.log("Navigating to:", profileUrl);
 
