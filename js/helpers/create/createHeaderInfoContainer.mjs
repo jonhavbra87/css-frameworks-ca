@@ -10,10 +10,14 @@ export function createHeaderInfoContainer(postData) {
     cardTitle.textContent = postData.title;
     
     const cardTags = document.createElement("p");
+    
     cardTags.classList.add("text-wrap", "fw-light");
+    
     if (postData.tags && postData.tags.length) {
-  // Process each tag to ensure it starts with a '#'
-  const formattedTags = postData.tags.map(tag => {
+
+    // Process each tag to ensure it starts with a '#'
+    const formattedTags = postData.tags.map(tag => {
+
     // Trim the tag to remove leading/trailing whitespace
     const trimmedTag = tag.trim();
 

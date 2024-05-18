@@ -1,4 +1,4 @@
-import { navigateToProfile } from "../navigateToProfile.mjs";
+import { navigateToSpecificPostProfile } from "../navigateToSpecificPostProfile.mjs";
 
 export function createProfileImage(profileData) {
     const imgContainer = document.createElement("div");
@@ -9,7 +9,7 @@ export function createProfileImage(profileData) {
     img.src = profileData.avatar || "https://upload.wikimedia.org/wikipedia/commons/9/9d/Unknown_Member.jpg?20170805162126";
     img.alt = `Profile of ${profileData.name}`;
     img.style.cursor = "pointer"; 
-    img.addEventListener("click", () => navigateToProfile(profileData.name)); 
+    img.addEventListener("click", () => navigateToSpecificPostProfile(profileData.name)); 
 
     imgContainer.append(img);
     return imgContainer;

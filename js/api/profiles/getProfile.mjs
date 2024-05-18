@@ -24,19 +24,3 @@ export async function getProfile(name) {
         throw error; 
     }
 }
-
-// export async function getProfiles() {
-//     try {
-//         const url = (API_SOCIAL_URL + action);
-//         console.log(url);
-//         const profiles = await doFetch(url);
-//         if (!Array.isArray(profiles)) {
-//             console.error('Data received is not an array:', profiles);
-//             return [];  // Return an empty array if data is not in expected format
-//         }
-//         return profiles;
-//     } catch (error) {
-//         console.error("Error fetching profiles:", error.message);
-//         return [];  // Return an empty array to handle errors gracefully
-//     }
-// }

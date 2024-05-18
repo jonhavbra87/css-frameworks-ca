@@ -2,7 +2,7 @@ import { getPost } from "../api/posts/getPost.mjs";
 import { reactToPost } from "../api/posts/reactToPost.mjs";
 import { createCommentsContainer } from "../helpers/create/index.mjs";
 
-import { renderSpecificPostTemplates } from "./post.mjs";
+import { renderSpecificPost } from "./renderSpecificPost.mjs";
 
 //fetching med loop, 500 stk, så filtrere.
 
@@ -18,7 +18,7 @@ export async function renderPost() {
       if (postData) {
           const container = document.querySelector("#post");
 
-          renderSpecificPostTemplates(postData, container);
+          renderSpecificPost(postData, container);
 
           if (postData._count.comments > 0) {
               const commentsContainer = createCommentsContainer(postData);

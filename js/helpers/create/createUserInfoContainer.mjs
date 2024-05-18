@@ -1,4 +1,4 @@
-import { navigateToProfile } from "../navigateToProfile.mjs";
+import { navigateToSpecificPostProfile } from "../navigateToSpecificPostProfile.mjs";
 
 export function createUserInfoContainer(postData) {
         // Div for username and image
@@ -23,9 +23,9 @@ export function createUserInfoContainer(postData) {
         userImage.style.width = "40px";
         userImage.style.height = "40px";
         
-        //Adding event listener to navigate to profile page
+
         userInfo.append(userImage, userNameElement);
-        userInfo.addEventListener("click", () => navigateToProfile(postData.author.name));
+        userInfo.addEventListener("click", () => navigateToSpecificPostProfile(postData.author.name));
         userInfo.style.cursor = "pointer";
 
        return userInfo;

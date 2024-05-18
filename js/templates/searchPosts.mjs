@@ -1,6 +1,6 @@
 export async function setupSearchForm() {
     const inputElement = document.getElementById("searchInput");
-    inputElement.addEventListener("keyup", function() {
+    inputElement.addEventListener("submit", function() {
         let value = this.value.toLowerCase();
         const containers = document.querySelectorAll(".card"); 
         containers.forEach(function(container) {
