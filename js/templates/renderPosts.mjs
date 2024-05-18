@@ -10,8 +10,6 @@ export async function renderPosts() {
     const container = document.querySelector("#posts");
     container.innerHTML = '';
 
-  
-    //console.log(posts); 
     try {
         const posts = await getPosts();
         if (!posts || !posts.length) {
@@ -28,6 +26,3 @@ export async function renderPosts() {
 
 
 }
-
-//posData.reactions.lenght
-//postDAta.reactions.lenght når lengden er mer enn 0 så skal den vises

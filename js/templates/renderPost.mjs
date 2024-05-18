@@ -1,15 +1,24 @@
 import { getPost } from "../api/posts/getPost.mjs";
 import { reactToPost } from "../api/posts/reactToPost.mjs";
 import { createCommentsContainer } from "../helpers/create/index.mjs";
-
 import { renderSpecificPost } from "./renderSpecificPost.mjs";
 
-//fetching med loop, 500 stk, så filtrere.
+/**
+ * Renders a specific post on the page.
+ * 
+ * This function retrieves the post ID from the current URL, fetches the post data from the API,
+ * and renders the post content in the designated container. If the post has comments, 
+ * it also creates and appends a comments container.
+ * 
+ * @async - Asynchronous function
+ * @function renderPost - Renders a specific post on the page.
+ * @returns {Promise<void>} - A promise that resolves when the post is rendered.
+ * @throws {Error} - Throws an error if there is an issue rendering the post.
+ */
 
 export async function renderPost() {
 
   try {
-      // Get the blog post id from the URL
       const url = new URL(location.href);
       let id = url.searchParams.get("id");
 

@@ -1,4 +1,4 @@
-import { filterByName } from "../templates/filterByName.mjs";
+import { filterByName } from "../utilities/filterByName.mjs";
 
 export function filterButton(posts) {
     const filterBtn = document.getElementById("filterButton");
