@@ -1,9 +1,17 @@
 import { getPost } from "../api/posts/getPost.mjs";
 import { updatePost } from "../api/posts/update.mjs";
 
-
-//make the old post data appear in the form. 
-//This is done by getting the post data from the API and then setting the value of the form fields to the data from the API.
+/**
+ * Sets up an event listener for updating a post.
+ * 
+ * This function initializes the update post form by populating it with the current post data.
+ * It also adds a submit event listener to the form to handle the post update process.
+ * 
+ * @async - Asynchronous function
+ * @function setUpdatePostListener - Sets up an event listener for updating a post.
+ * @returns {Promise<void>} - A promise that resolves if the post is updated successfully.
+ * @throws {Error} - Throws an error if there is an issue fetching the post or updating the post.
+ **/
 
 
 export async function setUpdatePostListener() {
@@ -30,7 +38,7 @@ export async function setUpdatePostListener() {
             const form = event.target;
             const formData = new FormData(form);
             const post = Object.fromEntries(formData.entries())
-            console.log("I'm going to create a post with the following data: ", post)
+ 
             post.id = id;
 
             
@@ -49,15 +57,8 @@ export async function setUpdatePostListener() {
                 const response = await updatePost(post); 
                 console.log("Post created successfully", response);
             } catch (error) {
-                console.error("Failed to create the post:", error);
+                throw new Error("Failed to create the post: " + error);
             }
         })
     }
 }
-
-//For a hidden  input, for the ID, this could be an option:
-//      const url = new URL(location.href);
-//      const id = url.searchParams.get("id");
-
-//inside the if statement, before form.addEventListener:
-//        form.id.value = id;

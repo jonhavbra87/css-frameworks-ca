@@ -2,7 +2,8 @@
  * Navigates to a profile page based on the profile name.
  * 
  * @param {string} profileName - The name of the profile to navigate to.
- */
+ * @throws {Error} - Throws an error if the profile name is not provided.    
+ **/
 export async function navigateToLoggedInProfile() {
     try {
         // Retrieve profile data from localStorage
@@ -27,8 +28,7 @@ export async function navigateToLoggedInProfile() {
             throw new Error("No profile data found in localStorage.");
         }
     } catch (error) {
-        console.error("Error navigating to profile:", error);
-        // Optionally display an error message to the user
         alert("Failed to navigate to profile. Please try again.");
+        throw new Error(`Error navigating to profile: ${error.message}`);
     }
 }

@@ -30,10 +30,10 @@ export async function renderProfile() {
         
         container.append(profileCard);  
     } else {
-        console.log("No profile found with name-id:", name);
+        alert(`No profile with the name ${name}. Please try again.`);
     } 
  } catch (error) {
-        console.error("Failed to load profile:", error);
+        throw new Error(`Failed to render profile: ${error.message}`);
     }
  
 

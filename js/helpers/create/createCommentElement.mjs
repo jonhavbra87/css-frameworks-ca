@@ -1,13 +1,12 @@
 import * as helpers from "../../helpers/create/index.mjs"
 
-// Funksjon for å lage et kommentar-element
+
 export function createCommentElement(comment) {
-    // Opprett kort for kommentaren
+
     const commentCard = helpers.createCardContainer(comment);
     commentCard.classList.add("card", "bg-secondary", "m-2", "border-3", "rounded-3", "p-3", "text-white", "col-12", "col-md-8", "col-lg-6", "mx-auto");
 
     const commentBody = helpers.createCardBodyContainer(comment);
-    // commentBody.classList.add("comment-body");
 
     const userInfo = helpers.createUserInfoContainer(comment);
     userInfo.classList.add();

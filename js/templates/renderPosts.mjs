@@ -21,7 +21,7 @@ export async function renderPosts() {
         filterByCommentsSwitch(posts, container);
         filterByReactionsSwitch(posts, container);
     } catch (error) {
-        console.error("Failed to fetch and render posts:", error);
+        throw new Error(`Failed to render posts: ${error.message}`);
     }
 
 

@@ -25,5 +25,3 @@ export async function getPosts() {
         throw new Error(error)
     }
 }
-
-//bruke finally etter catch for å rydde opp etter fetch ? 

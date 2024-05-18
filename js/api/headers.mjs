@@ -5,6 +5,7 @@ import { load } from "../storage/index.mjs";
  * @returns {Promise<Object>} A promise that resolves to the headers object.
  * @throws {Error} If an access token cannot be found.
  */
+
 export async function headers() {
     try {
         // Load access token from storage
@@ -24,7 +25,6 @@ export async function headers() {
 
     } catch (error) {
         // Catch any errors in the token loading process and throw a meaningful error
-        console.error("Error retrieving headers:", error.message);
         throw new Error("Unable to retrieve headers due to an access token issue.");
     }
 }

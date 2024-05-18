@@ -27,7 +27,7 @@ export async function reactToPost(postData, reaction = "❤️") {
             method: method,
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${localStorage.getItem("accessToken")}` // Include Authorization header
+                'Authorization': `Bearer ${localStorage.getItem("accessToken")}`
             },
             body: JSON.stringify({}) 
         });
@@ -38,10 +38,8 @@ export async function reactToPost(postData, reaction = "❤️") {
         }
 
         const result = await response.json();
-        console.log("reactToPost result:", result);
         return result;
     } catch (error) {
-        console.error("Error while reacting to post:", error);
         throw error;
     }
 }

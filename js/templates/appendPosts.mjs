@@ -18,6 +18,6 @@ export function appendPosts(postData, parent) {
             }
         });
     } catch (error) {
-    console.error("Failed to render posts:", error);
+    throw new Error(`Failed to render posts: ${error.message}`);
     }
 }

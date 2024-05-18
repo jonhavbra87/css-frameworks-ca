@@ -3,8 +3,8 @@
  *
  * @param {string} profileName - The name of the profile to navigate to.
  * @returns {Promise<void>} - A promise that resolves when navigation is complete.
- * @throws Will throw an error if navigation fails.
- */
+ * @throws {error} - Will throw an error if navigation fails.
+ **/
 
 export async function navigateToSpecificPostProfile(profileName) {
     try {

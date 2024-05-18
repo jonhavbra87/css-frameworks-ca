@@ -1,6 +1,20 @@
 import { API_SOCIAL_URL } from "../constants.mjs";
 import * as storage from "../../storage/index.mjs";
 
+/**
+ * Logs in a user by sending their profile data to the API.
+ * 
+ * This function sends a login request to the API with the provided profile data.
+ * If the login is successful, it stores the access token and user profile in local storage
+ * and displays a success alert. If the login fails, it throws an error with the response status text.
+ *
+ * @async - Asynchronous function
+ * @function login - Logs in a user by sending their profile data to the API.
+ * @param {Object} profile - The profile data containing username and password for login.
+ * @returns {Promise<void>} - A promise that resolves if the login is successful.
+ * @throws {Error} Throws an error if the login request fails.
+ **/
+
 const action = "/auth/login";
 const method = "post";
 

@@ -25,7 +25,7 @@ export async function reactionButton() {
                     likeCountSpan.textContent = reactionData.newReactionCount;
                 }
             } catch (error) {
-                console.error("Failed to react to post", error);
+                throw new Error(`Failed to react to post: ${error.message}`);
             }
         }
     });

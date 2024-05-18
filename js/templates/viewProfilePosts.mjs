@@ -36,11 +36,10 @@ export async function viewProfilePosts() {
 
         if (!posts) {
             displayErrorProfilePosts();
-            console.log("No posts found or failed to load posts.");
             return;
         }
         appendPosts(posts, container);
     } catch (error) {
-        console.error("Failed to fetch and render posts:", error);
+        throw new Error(`Failed to fetch and render profile posts: ${error.message}`);
     }
 }

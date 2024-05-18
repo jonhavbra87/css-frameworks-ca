@@ -7,8 +7,7 @@ export function setCreatePostListener() {
             event.preventDefault();
             const formData = new FormData(event.target);
             const post = Object.fromEntries(formData.entries());
-            console.log("I'm going to create a post with the following data:", post);
-
+      
             if (post.tags) {
                const tagsArray = post.tags = post.tags
                   .split(",") //splits the string into an array
@@ -21,7 +20,7 @@ export function setCreatePostListener() {
               }
 
             try {
-                const response = await createPost(post);  // Legg til await her
+                const response = await createPost(post); 
                 console.log("Post created successfully", response);
             } catch (error) {
                 console.error("Failed to create the post:", error);
