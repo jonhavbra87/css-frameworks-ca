@@ -12,21 +12,25 @@ export function setLoginFormListener() {
             const form = event.target;
             const formData = new FormData(form);
             const profile = Object.fromEntries(formData.entries())
-            console.log("I'm going to login the user with the following data: ", profile)
+            const email = profile.email;
+           
+            const noroffEmailPattern = /^[a-zA-Z0-9._%+-]+@(noroff\.no|stud\.noroff\.no)$/;
 
+            if (!noroffEmailPattern.test(email)) {
+                alert("Please enter a valid Noroff email address (@noroff.no or @stud.noroff.no).");
+                return;
+            }
          try {
             await login(profile);
             const user = storage.load("profile");
             if (user && user.name) {
                 window.location.href = `/profile/?name=${user.name}`;
             } else {
-                throw new Error("Brukernavn er ikke lagret i localStorage.");
+                throw new Error("User is not stored in localStorage.");
             }
          } catch (error) {
-            console.error("Login failed:", error);
+            throw new Error("Failed to log in: " + error);
          }
-           
-
         })
     }
 }
