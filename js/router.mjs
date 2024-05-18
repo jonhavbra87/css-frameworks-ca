@@ -13,6 +13,7 @@ export default function router() {
             listeners.editProfileButton();
             templates.viewProfilePosts();
             utilities.logOut();
+            listeners.navigateToLoggedInProfileListener();
             break;
         case "/profile/login/":
             listeners.setLoginFormListener();
@@ -23,15 +24,19 @@ export default function router() {
         case "/profile/edit/":
             listeners.setUpdateProfileListener();
             listeners.backButton();
+            listeners.navigateToLoggedInProfileListener();
             break;
         case "/post/create/":
             listeners.setCreatePostListener();
+            listeners.navigateToLoggedInProfileListener();
             break;
         case "/post/edit/":
             listeners.setUpdatePostListener();
+            listeners.navigateToLoggedInProfileListener();
             break;
         case "/post/delete/":
             listeners.setDeletePostListener();
+            listeners.navigateToLoggedInProfileListener();
             break;
         case "/":
             console.log("Welcome to Polarise!");
@@ -42,12 +47,14 @@ export default function router() {
             templates.setupSearchForm();
             listeners.filterToggle();
             listeners.toggleSearch();
+            listeners.navigateToLoggedInProfileListener();
             break;
         case "/post/":
             utilities.logOut();
             templates.renderPost();
             listeners.reactionButton();
             listeners.backButton();
+            listeners.navigateToLoggedInProfileListener();
             break;
         default:
             console.log("I'm not going to do anything because I'm not on the login or register page");
