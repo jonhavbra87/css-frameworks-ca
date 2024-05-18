@@ -5,10 +5,10 @@ export * from "./login.mjs";
 export * from "./updateProfile.mjs";
 export * from "./deletePost.mjs";
 export * from "./editProfileButton.mjs";
-export * from "./navigateToProfile.mjs";
+export * from "../helpers/navigateToProfile.mjs";
 export * from "./backButton.mjs";
 export * from "./reactionButton.mjs"
 export * from "./commentButton.mjs"
 export * from "./filterToggle.mjs";
 export * from "./toggleSearch.mjs";
-export * from "./navigateToProfile.mjs"
+export * from "../helpers/navigateToProfile.mjs"

@@ -1,4 +1,4 @@
-import { navigateToProfile } from "../../listeners/navigateToProfile.mjs";
+import { navigateToProfile } from "../navigateToProfile.mjs";
 
 export function createProfileImage(profileData) {
     const imgContainer = document.createElement("div");
