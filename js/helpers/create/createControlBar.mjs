@@ -1,4 +1,4 @@
-import { toggleHeart } from "../../listeners/heartToggle.mjs";
+import { toggleHeart } from "../../listeners/toggleHeart.mjs";
 import { toggleComment } from "../../listeners/toggleComment.mjs";
 import { createIconElement } from "./createIconElement.mjs";
 
