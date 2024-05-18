@@ -12,8 +12,8 @@ export default function router() {
             templates.renderProfile();
             listeners.editProfileButton();
             templates.viewProfilePosts();
-            utilities.logOut();
             listeners.navigateToLoggedInProfileListener();
+            utilities.logOut();
             break;
         case "/profile/login/":
             listeners.setLoginFormListener();
@@ -25,18 +25,22 @@ export default function router() {
             listeners.setUpdateProfileListener();
             listeners.backButton();
             listeners.navigateToLoggedInProfileListener();
+            utilities.logOut();
             break;
         case "/post/create/":
             listeners.setCreatePostListener();
             listeners.navigateToLoggedInProfileListener();
+            utilities.logOut();
             break;
         case "/post/edit/":
             listeners.setUpdatePostListener();
             listeners.navigateToLoggedInProfileListener();
+            utilities.logOut();
             break;
         case "/post/delete/":
             listeners.setDeletePostListener();
             listeners.navigateToLoggedInProfileListener();
+            utilities.logOut();
             break;
         case "/":
             console.log("Welcome to Polarise!");
