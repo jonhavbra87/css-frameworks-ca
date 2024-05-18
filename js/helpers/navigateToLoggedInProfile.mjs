@@ -11,7 +11,7 @@ export async function navigateToLoggedInProfile() {
         
         if (storedProfile) {
             const storedProfileData = JSON.parse(storedProfile);
-            console.log("Profile data from localStorage:", storedProfileData);
+
 
             if (!storedProfileData || !storedProfileData.name) {
                 throw new Error("Profile data is invalid.");
@@ -20,7 +20,6 @@ export async function navigateToLoggedInProfile() {
             // Use the name from profile data
             const profileName = storedProfileData.name;
             const profileUrl = `/profile/?name=${profileName}`;
-            console.log("Navigating to:", profileUrl);
 
             // Navigate to the profile page
             window.location.href = profileUrl;

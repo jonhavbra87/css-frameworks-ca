@@ -23,8 +23,6 @@ export async function commentOnPost(postId, comment) {
     }
 
     const commentURL = `${API_SOCIAL_URL}${action}/${postId}${theComment}`;
-    console.log("Comment URL:", commentURL); 
-    console.log("Sending comment:", comment); 
 
     try {
         const response = await authFetch(commentURL, {
@@ -41,7 +39,6 @@ export async function commentOnPost(postId, comment) {
         }
 
         const result = await response.json();
-        console.log("Comment submitted successfully:", result);
         return result;
     } catch (error) {
         console.error("Error while sending comment to post:", error);

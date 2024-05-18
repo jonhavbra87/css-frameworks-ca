@@ -55,7 +55,8 @@ export async function setUpdatePostListener() {
 
             try {
                 const response = await updatePost(post); 
-                console.log("Post created successfully", response);
+                return response;
+                
             } catch (error) {
                 throw new Error("Failed to create the post: " + error);
             }

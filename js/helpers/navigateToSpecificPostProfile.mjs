@@ -9,7 +9,6 @@
 export async function navigateToSpecificPostProfile(profileName) {
     try {
             const profileUrl = `/profile/?name=${profileName}`;
-            console.log("Navigating to:", profileUrl);
 
             window.location.href = profileUrl;
         }

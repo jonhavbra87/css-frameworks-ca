@@ -6,7 +6,6 @@ import { reactToPost } from "../api/posts/reactToPost.mjs";
 export async function reactionButton() {
     document.addEventListener("click", async (event) => {
         if (event.target.id === "likeButton") {
-            console.log("Reaction button clicked");
 
             const postId = event.target.getAttribute("data-post-id");
 
@@ -17,7 +16,6 @@ export async function reactionButton() {
 
             try {
                 const reactionData = await reactToPost({ id: postId });
-                console.log("reactionData:", reactionData);
 
                 // Update the like count if available
                 const likeCountSpan = event.target.querySelector("span");

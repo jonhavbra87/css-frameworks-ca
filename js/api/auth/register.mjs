@@ -19,7 +19,7 @@ const method = "post";
 
 export async function register(profile) {
   const registerURL = API_SOCIAL_URL + action;
-  console.log(registerURL);
+
 
   const body = JSON.stringify(profile);
 
@@ -32,7 +32,6 @@ export async function register(profile) {
   });
 
   const result = await response.json();
-  console.log(result);
   alert("You have been registered in successfully");
   window.location.href = "/profile/login/";
   return result;

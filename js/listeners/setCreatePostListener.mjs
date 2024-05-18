@@ -21,9 +21,9 @@ export function setCreatePostListener() {
 
             try {
                 const response = await createPost(post); 
-                console.log("Post created successfully", response);
+                return response;
             } catch (error) {
-                console.error("Failed to create the post:", error);
+                throw new Error("Failed to create the post");
             }
         });
     }

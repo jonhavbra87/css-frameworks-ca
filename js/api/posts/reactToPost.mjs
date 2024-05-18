@@ -32,7 +32,6 @@ export async function reactToPost(postData, reaction = "❤️") {
             body: JSON.stringify({}) 
         });
 
-        console.log("response from authFetch inside reactToPost:", response);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.statusText}`);
         }

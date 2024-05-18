@@ -4,7 +4,6 @@ export function setRegisterFormListener() {
     const form = document.querySelector("#registerForm");
     if (form) {
         form.addEventListener("submit", (event) => {
-            console.log(event);
             event.preventDefault()
             
             const form = event.target;

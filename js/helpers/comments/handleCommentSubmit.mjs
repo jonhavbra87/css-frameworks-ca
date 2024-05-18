@@ -16,12 +16,13 @@ export async function handleCommentSubmit(event, postId, chatForm) {
 
     if (commentText) {
         try {
-            console.log("Submitting comment:", commentText);
             await commentOnPost(postId, commentText);
             inputField.value = "";
-            console.log("Comment submitted successfully");
+
             alert(`Success! Your comment: ${commentText}`);
+
             chatForm.remove();
+            
             updateChatCount(postId);
             refreshPage();
             createCommentsContainer(postId);
