@@ -7,6 +7,7 @@
 
 export function filterByReactions(posts) {
     const filteredReactions = posts.filter(post => post.reactions && post.reactions.length > 0);
+     //I have not manage to append the posts to the container, so I will just console.log the filterByReactions for now.
      console.log(filteredReactions);
      return filteredReactions;
  }

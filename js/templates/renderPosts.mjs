@@ -6,14 +6,12 @@ import { filterByReactionsSwitch } from "../listeners/filterByReactionsSwitch.mj
 
 
 export async function renderPosts() {
-    console.log("I'm on the posts page");
     const container = document.querySelector("#posts");
     container.innerHTML = '';
 
     try {
         const posts = await getPosts();
         if (!posts || !posts.length) {
-            console.log("No posts found or failed to load posts.");
             return;
         }
         appendPosts(posts, container);

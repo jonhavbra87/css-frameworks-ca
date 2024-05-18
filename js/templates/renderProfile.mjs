@@ -21,8 +21,7 @@ export async function renderProfile() {
         let name = url.searchParams.get("name"); 
 
         const profileData = await getProfile(name);
-        console.log("profileData:", profileData);
-
+        
      if (profileData) {
         const container = document.querySelector("#profileContainer");
 
