@@ -95,28 +95,48 @@
             <form id="createPost">
               <div class="form-group mb-3">
                 <label for="title">Title</label>
-                <input class="form-control" type="text" name="title" required />
+                <input
+                  class="form-control"
+                  type="text"
+                  id="title"
+                  name="title"
+                  required
+                />
               </div>
 
               <div class="form-group mb-3">
                 <label for="body">Body</label>
-                <textarea class="form-control" name="body"> </textarea>
+                <textarea class="form-control" id="body" name="body">
+                </textarea>
               </div>
 
               <div class="form-group mb-3">
                 <label for="tags">Tags</label>
-                <input class="form-control" type="text" name="tags" />
+                <input class="form-control" type="text" id="tags" name="tags" />
               </div>
 
               <div class="form-group mb-3">
                 <label for="media">Media</label>
-                <input class="form-control" type="url" name="media" />
+                <input
+                  class="form-control"
+                  type="url"
+                  id="media"
+                  name="media"
+                />
               </div>
 
-              <button type="submit" class="btn bg-primary col-6">
+              <button
+                type="submit"
+                class="btn bg-primary col-6"
+                aria-label="Create Post"
+              >
                 Create Post
               </button>
-              <button id="backButton" class="btn text-white">
+              <button
+                id="backButton"
+                class="btn text-white"
+                aria-label="backButton"
+              >
                 <i class="bi bi-arrow-left-circle-fill fs-1 my-0"></i>
               </button>
             </form>

@@ -88,11 +88,23 @@
           <form id="editProfile">
             <div class="form-group mb-3">
               <label for="name">Name</label>
-              <input class="form-control" type="text" name="name" disabled />
+              <input
+                class="form-control"
+                type="text"
+                id="name"
+                name="name"
+                disabled
+              />
             </div>
             <div class="form-group mb-3">
               <label for="email">Email</label>
-              <input class="form-control" type="email" name="email" disabled />
+              <input
+                class="form-control"
+                type="email"
+                id="email"
+                name="email"
+                disabled
+              />
             </div>
 
             <div class="form-group mb-3">
@@ -102,6 +114,7 @@
                 type="url"
                 name="banner"
                 placeholder="Banner"
+                id="banner"
               />
             </div>
 
@@ -112,15 +125,23 @@
                 type="url"
                 name="avatar"
                 placeholder="Avatar"
+                id="avatar"
               />
             </div>
             <div
               class="d-flex justify-content-between align-items-center flex-wrap"
             >
-              <button class="btn bg-success col-4 col-md-6">
+              <button
+                class="btn bg-success col-4 col-md-6"
+                aria-label="Update Profile"
+              >
                 Update Profile
               </button>
-              <button id="backButton" class="btn text-white">
+              <button
+                id="backButton"
+                class="btn text-white"
+                aria-label="backButton"
+              >
                 <i class="bi bi-arrow-left-circle-fill fs-1 my-0"></i>
               </button>
             </div>
