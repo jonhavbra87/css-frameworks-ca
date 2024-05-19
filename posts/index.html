@@ -94,7 +94,12 @@
         <div class="d-flex">
           <!-- Search Icon and Panel -->
           <div class="position-relative ms-2">
-            <button class="btn" type="button" id="toggleSearch">
+            <button
+              class="btn"
+              type="button"
+              id="toggleSearch"
+              aria-label="Toggle Search"
+            >
               <i class="bi bi-search-heart text-white fs-2"></i>
             </button>
             <div
@@ -121,7 +126,12 @@
           </div>
           <!-- Filter Icon and Panel -->
           <div class="position-relative">
-            <button class="btn" type="button" id="toggleFilter">
+            <button
+              class="btn"
+              type="button"
+              id="toggleFilter"
+              aria-label="Toggle Filter"
+            >
               <i class="bi bi-filter-circle text-white fs-2"></i>
             </button>
             <div
@@ -150,6 +160,7 @@
                   >Sort by reactions</label
                 >
               </div>
+              <label for="filterInputName">Filter by author name:</label>
               <input
                 type="text"
                 id="filterInputName"
@@ -166,6 +177,7 @@
             type="button"
             id="editProfileButton"
             class="btn btn-yellow rounded-circle text-light me-2"
+            aria-label="Edit Profile"
           >
             <i class="bi bi-gear position-relative d-inline-block fs-3"></i>
           </button>
