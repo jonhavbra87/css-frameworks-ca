@@ -46,6 +46,7 @@
                   <li class="nav-item">
                     <a
                       class="nav-link text-white text-capitalize fs-2 fw-semibold"
+                      aria-current="page"
                       href="/post/create/"
                       >new post</i
                     ></a>
@@ -53,7 +54,6 @@
                   <li class="nav-item">
                     <a 
                     class="nav-link text-white text-capitalize fs-2 fw-semibold" 
-                    aria-current="page"
                     id="profileLink"
                     href="#"
                       >profile</a>
@@ -61,7 +61,6 @@
                   <li class="nav-item">
                     <a 
                     class="nav-link text-white text-capitalize fs-2 fw-semibold" 
-                    aria-current="page"
                     id="logOut"
                     href="/"
                       >logout</a>
@@ -75,27 +74,26 @@
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-6">
-                    <!-------- a form for creating a post ---------->
                     <form id="deletePost">
                         <div class="form-group mb-3">
-                            <label for="">Title</label>
+                            <label for="title">Title</label>
                             <input class="form-control" type="text" name="title" placeholder="name"
                                 title="User name must unly contain lower case and upper case letters, numbers and underscore (_). Example: My_User123">
                         </div>
 
                         <div class="form-group mb-3">
-                            <label for="">Body</label>
+                            <label for="body">Body</label>
                             <textarea class="form-control" name="body">
                         </textarea>
                         </div>
 
                         <div class="form-group mb-3">
-                            <label for="">Tags</label>
+                            <label for="body">Tags</label>
                             <input class="form-control" type="text" name="tags" placeholder="tags">
                         </div>
 
                         <div class="form-group mb-3">
-                            <label for="">Media</label>
+                            <label for="media">Media</label>
                             <input class="form-control" type="url" name="media" placeholder="media">
                         </div>
 
