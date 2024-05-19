@@ -97,6 +97,7 @@
                 <input
                   class="form-control"
                   type="text"
+                  id="title"
                   name="title"
                   placeholder="name"
                   title="User name must unly contain lower case and upper case letters, numbers and underscore (_). Example: My_User123"
@@ -107,7 +108,8 @@
 
               <div class="form-group mb-3">
                 <label for="body">Body</label>
-                <textarea class="form-control" name="body" required> </textarea>
+                <textarea class="form-control" id="body" name="body">
+                </textarea>
               </div>
 
               <div class="form-group mb-3">
@@ -115,6 +117,7 @@
                 <input
                   class="form-control"
                   type="text"
+                  id="tags"
                   name="tags"
                   placeholder="tags"
                 />
@@ -126,12 +129,22 @@
                   class="form-control"
                   type="url"
                   name="media"
+                  id="media"
                   placeholder="media"
                 />
               </div>
 
-              <button class="btn bg-success col-6">Update Post</button>
-              <button id="backButton" class="btn text-white">
+              <button
+                class="btn bg-success text-white col-6"
+                aria-label="updatePost"
+              >
+                Update Post
+              </button>
+              <button
+                id="backButton"
+                class="btn text-white"
+                aria-label="backButton"
+              >
                 <i class="bi bi-arrow-left-circle-fill fs-1 my-0"></i>
               </button>
             </form>
