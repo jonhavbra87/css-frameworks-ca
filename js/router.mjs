@@ -30,13 +30,11 @@ export default function router() {
         case "/post/create/":
             listeners.setCreatePostListener();
             listeners.navigateToLoggedInProfileListener();
-            listeners.backButton();
             utilities.logOut();
             break;
         case "/post/edit/":
             listeners.setUpdatePostListener();
             listeners.navigateToLoggedInProfileListener();
-            listeners.backButton();
             utilities.logOut();
             break;
         case "/post/delete/":
