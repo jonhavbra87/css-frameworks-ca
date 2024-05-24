@@ -11,7 +11,7 @@ export function setRegisterFormListener() {
             const profile = Object.fromEntries(formData.entries())
             const email = profile.email;
            
-            const noroffEmailPattern = /^[a-zA-Z0-9._%+-]+@(noroff\.no|stud\.noroff\.no)$/;
+            const noroffEmailPattern = /^[^\s@]+@(noroff.no|stud.noroff.no)$/i;
 
             if (!noroffEmailPattern.test(email)) {
                 alert("Please enter a valid Noroff email address (@noroff.no or @stud.noroff.no).");
