@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome</title>
+    <link rel="stylesheet" href="./dist/css/index.css" />
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script> -->
+    <script type="module" src="./js/index.mjs"></script>
+    <script
+      defer
+      src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+    ></script>
+  </head>
+  <body class="bg-dark">
+    <main class="container">
+      <section class="row d-flex vh-100">
+        <div
+          class="bg-primary rounded-3 col-11 m-auto d-flex flex-column flex-md-row justify-content-around align-items-center py-3 py-md-5"
+        >
+          <div
+            class="position-relative text-center text-lg-start col-10 col-md-6 py-md-4"
+          >
+            <div
+              class="brand_logo_container top-0 start-50 translate-middle rounded-5 mb-4"
+            >
+              <img
+                src="/content/logopolorise.jpg"
+                class="brand_logo"
+                alt="Logo"
+              />
+            </div>
+            <div class="pt-5 mt-5 text-break">
+              <p class="lead">
+                Welcome to Polarise! Enjoy your connections and trip down memory
+                lane. Take pictures and share with friends and family, only the
+                pictures is in polaroid form
+                <span class="fw-bold">- just like the 80s!</span>
+              </p>
+            </div>
+          </div>
+          <div
+            class="d-flex flex-column justify-content-center align-items-center col-10 col-md-6 pt-5 gap-3"
+          >
+            <a
+              class="btn btn-dark btn-lg col-10 col-md-8"
+              href="/profile/login/"
+              >Login</a
+            >
+
+            <a
+              class="btn btn-primary btn-lg col-10 col-md-8"
+              href="/profile/register/"
+              >Register</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

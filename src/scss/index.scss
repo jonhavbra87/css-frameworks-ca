@@ -1,1 +1,261 @@
+// scss-docs-start color-variables
+$blue: #FFD369; //Primary
+$gray-600: #393E46; //secondary color
+$gray-300: #000; //border color
+$gray-900: #222831; //Dark color
 
+.bg-primary {
+    background: linear-gradient(-225deg, $blue, $gray-600);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.bg-navbar {
+    background: linear-gradient(90deg, $blue, $gray-600);
+}
+
+@import "../../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+// Custom CSS
+
+@keyframes growOut {
+    0% {
+        transform: scaleY(0);
+        transform-origin: top;
+        opacity: 0;
+    }
+    100% {
+        transform: scaleY(1);
+        transform-origin: top;
+        opacity: 1;
+    }
+}
+
+@keyframes shrinkIn {
+    0% {
+        transform: scaleY(1);
+        transform-origin: top;
+        opacity: 1;
+    }
+    100% {
+        transform: scaleY(0);
+        transform-origin: top;
+        opacity: 0;
+    }
+}
+
+#toggleFilter, #toggleSearch {
+    z-index: 2;
+}
+
+.filter-panel, .search-panel {
+    position: relative;
+    transform: translateY(0);
+    transform-origin: top;
+    opacity: 1;
+    z-index: 1;
+    overflow: hidden;
+    display: none;
+    width: 300px;
+}
+
+.filter-visible, .search-visible {
+    animation: shrinkIn 0.3s forwards;
+    display: block;
+}
+
+.filter-hidden, .search-hidden {
+    animation: growOut 0.3s forwards;
+
+}
+
+
+.btn {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.reaction-container {
+    position: absolute;
+    bottom: 29%;
+    left: 0;
+    justify-content: center;
+    width: 100%;
+}
+
+.gradient-border {
+    display: inline-block; 
+    border-radius: 50%; 
+    padding: 2px; 
+    background: linear-gradient(-225deg, $blue, $gray-600); 
+}
+.gradient-border img {
+    display: block; 
+    width: 100%;
+    border-radius: 50%; 
+}
+
+.box-shadow {
+    box-shadow: 0 0 15px rgba(153, 141, 76, 0.3);
+}
+
+.custom-border-bottom {
+    border-bottom: 3px solid !important;
+}
+
+.custom-height {
+    height: calc(100vh - 80px); 
+}
+
+.custom-card-height {
+    height: calc(50vh); 
+}
+
+main {
+    padding-bottom: 80px;
+}
+
+
+.norican-regular {
+    font-family: "Norican", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Raleway", sans-serif;
+}
+
+a,
+p {
+    font-family: "Yrsa", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.error-message {
+    display: none;
+}
+
+//Card-img styling
+/* .fixed-height-img-container {
+    height: 300px; 
+    overflow: hidden; 
+}
+
+.fixed-height-img-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;   */
+
+
+//https://bootsnipp.com/snippets/3522X
+.brand_logo_container {
+    position: absolute;
+    height: 170px;
+    width: 170px;
+    top: -75px;
+    border-radius: 20px;
+    background: #222831;
+    padding: 10px;
+    text-align: center;
+}
+
+.brand_logo {
+    height: 150px;
+    width: 150px;
+    border-radius: 20px;
+}
+
+.form_container {
+    margin-top: 100px;
+}
+
+.input-group-text {
+    background: #393E46 !important;
+    color: white !important;
+    border: 0 !important;
+    border-radius: 0.25rem 0 0 0.25rem !important;
+}
+
+.input_user,
+.input_pass:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: #393E46 !important;
+}
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Norican&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Norican&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Norican&family=Raleway:ital,wght@0,100..900;1,100..900&family=Yrsa:ital,wght@0,300..700;1,300..700&display=swap');
+
+
+
+
+
+//Tried to change the color of the input fields when they are valid or invalid
+
+// html .form-control.is-valid:focus, 
+// html .was-validated .form-control:valid:focus {
+//   border-color: #6997FF !important; 
+//   box-shadow: 0 0 0 0.2rem rgba(105, 151, 255, 0.5) !important; 
+// }
+
+// html .was-validated .form-control:valid,
+// html .form-control.is-valid {
+//   border-color: #6997FF !important; 
+// }
+
+
+
+// html .form-control.is-invalid:focus, 
+// html .was-validated .form-control:invalid:focus {
+//   border-color: #E53935 !important; 
+//   box-shadow: 0 0 0 0.2rem rgba(229, 57, 53, 0.25) !important;
+// }
+
+// html .was-validated .form-control:invalid,
+// html .form-control.is-invalid {
+//   border-color: #E53935 !important;
+// }
+// .background-img {
+//     color: #6997FF;
+//     display: none; 
+//   }
+  
+//   .icon-invalid {
+//     color: #E53935 ;
+//     display: none; 
+//   }
+  
+//   .is-valid + .icon-valid {
+//     display: inline; 
+//   }
+  
+//   .is-invalid + .icon-invalid {
+//     display: inline; 
+//   }
+  
