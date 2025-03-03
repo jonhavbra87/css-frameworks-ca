@@ -45,12 +45,8 @@ npm install
 
 #
 ## Built With
-
-<p align="left">
-<a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML5" target="_blank"> <img width="50px" src="https://camo.githubusercontent.com/93e4e94382fb2211baf595fd981ec363e1400d1ad208321396344b2eb998b51f/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f7376672f68746d6c352e737667" /></a>
-<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank"> <img width="50px" src="https://camo.githubusercontent.com/10e5da35078001d86532bb75efeecf75aaca2765af099b3a2592a22fd12cb2e0/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f7376672f637373332e737667" /></a>
-<a href="https://www.javatpoint.com/what-is-vanilla-javascript" target="_blank"> <img width="50px" src="https://camo.githubusercontent.com/8e946c2804fdccdb848c1109042c5398ea6bf93367d82f83aad430b722f50d9b/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f7376672f6a6176617363726970742e737667" /></a>
-<a href="https://getbootstrap.com/" target="_blank"> <img width="50px" src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" /></a>
+<br>
+[![Front_End_Development](https://skillicons.dev/icons?i=html,css,js,bootstrap)](https://skillicons.dev)
 
 ## Getting Started
 
@@ -58,23 +54,8 @@ Download from the js2 branch
 
 ### Installing
 
-Clone the repo:
-
-```bash
-git clone https://github.com/jonhavbra87/css-frameworks-ca.git
-```
-
-### Running
-
-Open in VSCode.
-Open terminal.
-Write:
-
-```bash
-npm install
-```
-
-Then in the same terminal:
+🎯
+ same terminal:
 
 ```bash
 npm run dev
