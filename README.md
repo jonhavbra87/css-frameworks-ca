@@ -2,30 +2,33 @@
 
 ![image](content/JS2.webp)
 
-## Description
+## 🎯 **Project Goal**
 
 To apply knowledge of JavaScript techniques to implement the front-end functionality for a social media application.
 
-This is a CA for Front End development study @Noroff School of Technology and Digital Media.
+## 📝 **Project Brief**
+You have been tasked with producing a new JavaScript front-end client for an existing social media platform. The client application must be attractive and responsive, but you have an otherwise blank slate in terms of theme design language.
 
-I have planned this project with a Trello board: <a href="https://trello.com/b/7Pgpqg0p">Trello board</a>
+Using the provided API and API documentation, create a functioning user interface that allows for viewing, posting, editing and deleting social media content.
 
-I have deployed this project with Netlify if you would like to see how the project works in a browser: <a href="https://js2-jahb.netlify.app/"></a>
-## 🚀 **Technologies Used**
+Social API routes require both a JWT token and an API Key. You will need to register an account and login to access your token. 
 
-- **REACT** and **TypeScript** for the front-end development.
-- **Tailwind** for responsive design and UI components.
-- **Yup** & **React-Hook-Form** for validation.
-- **Zustand** for storing login & registration information.
-- **Vite** as the build tool and development server for fast module-based development.
-- **API**: The site interacts with the [Noroff Holidaze API](https://docs.noroff.dev/docs/v2) to manage items data.
+To complete the required features, you will also need to make use of GET, POST, PUT, and DELETE HTTP methods.
 
 ---
-## 💡 Design & Planning
-- **Design Prototype:** [Figma design](https://www.figma.com/design/GP9xbG1mBt0ZkxqO8CucVM/PE2?node-id=1-4738&t=5zobQLobQWHfJSsq-1)
-- **Style Guide:**  	[Figma Style Guide](https://www.figma.com/design/GP9xbG1mBt0ZkxqO8CucVM/PE2?node-id=1-4610&t=5zobQLobQWHfJSsq-1)
-- **Gannt Chart:** [Notions Gannt Chart](https://bright-whale-c2f.notion.site/1731226a005c80fcaa4afdf5261031cf?v=1741226a005c80109812000c6a9afd15)
-- **Kanban Board:** [Kanban Board](https://trello.com/invite/b/677cfead4127288a9e1f8212/ATTId98fa4f85d2e4b12e58986c2dd1cf3f16322CEAC/project-exam-2)
+## 🖥️ **Live Demo**
+
+[Link to live demo](https://js2-jahb.netlify.app/)
+
+---
+
+## 🚀 **Technologies Used**
+
+- **HTML**, **CSS** & **JavaScript** for the front-end development.
+- **Bootstrap** for responsive design and UI components.
+- **HTML** & **Regex** for validation.
+- **LocalStorage** for storing login & registration information.
+- **API**: The site interacts with the [Noroff Holidaze API](https://docs.noroff.dev/docs/v1) to manage items data.
 
 ---
 
@@ -43,21 +46,28 @@ git clone https://github.com/jonhavbra87/project_exam_2
 npm install
 ```
 
-#
 ## Built With
 <br>
 [![Front_End_Development](https://skillicons.dev/icons?i=html,css,js,bootstrap)](https://skillicons.dev)
 
-## Getting Started
+## 🛠️ **Setup Instructions**
 
-Download from the js2 branch
-
-### Installing
-
-🎯
- same terminal:
+1. Clone the repo:
 
 ```bash
+git clone https://github.com/jonhavbra87/css-frameworks-ca.git
+```
+2. Install the dependencies:
+
+```
+npm install
+```
+
+
+### Running
+Run the app:
+
+```
 npm run dev
 ```
 
@@ -76,9 +86,8 @@ If you want to:
 
 ## Contributing
 
-If you want to contribute, I would appreciate it if you open a pull request, so that the code can be reviewed.
+This is a Noroff Courtse Assignemt for the second exam. I appreciate a peer review if you got the time!
 
-## Contact
 
 ## Contact
 
