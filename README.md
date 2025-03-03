@@ -48,7 +48,7 @@ npm install
 
 ## Built With
 <br>
-[![Front_End_Development](https://skillicons.dev/icons?i=html,css,js,bootstrap)](https://skillicons.dev)
+[![Build_With](https://skillicons.dev/icons?i=html,css,js,bootstrap)](https://skillicons.dev)
 
 ## 🛠️ **Setup Instructions**
 
@@ -70,6 +70,9 @@ Run the app:
 ```
 npm run dev
 ```
+
+### Bagdes
+[![Netlify Status](https://api.netlify.com/api/v1/badges/86b6c37d-c36d-43cb-9cf3-df58914877fd/deploy-status)](https://app.netlify.com/sites/js2-jahb/deploys)
 
 ## How to use the app?
 
