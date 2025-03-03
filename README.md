@@ -47,9 +47,10 @@ npm install
 ```
 
 ## Built With
-<br>
-[![Build_With](https://skillicons.dev/icons?i=html,css,js,bootstrap)](https://skillicons.dev)
-[![My Skills](https://skillicons.dev/icons?i=js,html,css,wasm)](https://skillicons.dev)
+![HTML](https://skillicons.dev/icons?i=html)
+![CSS](https://skillicons.dev/icons?i=css)
+![JavaScript](https://skillicons.dev/icons?i=javascript)
+![Bootstrap](https://skillicons.dev/icons?i=bootstrap)
 
 ## 🛠️ **Setup Instructions**
 
